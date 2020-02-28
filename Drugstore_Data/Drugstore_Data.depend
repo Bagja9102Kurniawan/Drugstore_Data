@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1582820094 source:c:\latihan coding\drugstore_data\drugstore_data\list_parent.cpp
+	"list_parent.h"
+
+1582820094 c:\latihan coding\drugstore_data\drugstore_data\list_parent.h
+
+1582820094 source:c:\latihan coding\drugstore_data\drugstore_data\list_relasi.cpp
+	"list_relasi.h"
+
+1582820094 c:\latihan coding\drugstore_data\drugstore_data\list_relasi.h
+
+1514140574 source:c:\latihan coding\drugstore_data\drugstore_data\main.cpp
+	<iostream>
+
+1582820103 source:c:\latihan coding\drugstore_data\drugstore_data\list_child.cpp
+	"list_child.h"
+
+1582820130 c:\latihan coding\drugstore_data\drugstore_data\list_child.h
+	<iostream>
+
+1582820851 source:c:\latihan coding\drugstore_data\drugstore_data\list_child.h
+	<iostream>
+
