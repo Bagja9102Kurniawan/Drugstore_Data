@@ -11,7 +11,7 @@ using namespace std;
 #define info(P) P->info
 #define child(P) P->child
 
-struct data{
+struct test{
     int ID;
     string APOTIK;
     int JumObat;

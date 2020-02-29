@@ -21,3 +21,20 @@
 1582820851 source:c:\latihan coding\drugstore_data\drugstore_data\list_child.h
 	<iostream>
 
+1582875406 source:d:\github\drugstore_data\drugstore_data\list_child.cpp
+	"List_child.h"
+
+1582875406 d:\github\drugstore_data\drugstore_data\list_child.h
+	<iostream>
+
+1582875406 source:d:\github\drugstore_data\drugstore_data\list_parent.cpp
+	"List_parent.h"
+
+1582875799 d:\github\drugstore_data\drugstore_data\list_parent.h
+	<iostream>
+
+1582875406 source:d:\github\drugstore_data\drugstore_data\list_relasi.cpp
+	"list_relasi.h"
+
+1582875406 d:\github\drugstore_data\drugstore_data\list_relasi.h
+
