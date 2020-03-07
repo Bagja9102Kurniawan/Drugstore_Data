@@ -1,6 +1,17 @@
 #ifndef GENERAL_H_INCLUDED
 #define GENERAL_H_INCLUDED
 
+#include <iostream>
+using namespace std;
+
+#define next(P) P->next
+#define prev(P) P->prev
+#define info(P) P->info
+#define child(P) P->child
+#define contain(P) P->contain
+#define last(L) L.last
+#define first(L) L.first
+
 /**INFOTYPE*/
 struct obat{
     int IDobat;

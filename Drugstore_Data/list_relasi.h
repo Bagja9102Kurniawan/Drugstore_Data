@@ -1,28 +1,9 @@
 #ifndef LIST_RELASI_H_INCLUDED
 #define LIST_RELASI_H_INCLUDED
 
-#include "list_child.h"
-#include "list_parent.h"
+#include "general.h"
 
-#include <iostream>
-using namespace std;
-
-#define next(P) P->next
-#define last(L) L.last
-#define first(L) L.first
-#define info(P) P->info
-
-typedef struct elmlist_relasi *address_relasi;
-
-struct elmlist_relasi{
-    address_relasi next;
-    address_child info;
-};
-
-struct List_relasi{
-    address_relasi first;
-    address_relasi last;
-};
+/**Single Linear !!!!!!!*/
 
 void createList(List_relasi &L);
 void insertFirst(List_relasi &L, address_relasi P);
@@ -31,11 +12,13 @@ void insertAfter(address_relasi Prec, address_relasi P);
 void deleteFirst(List_relasi &L, address_relasi &P);
 void deleteLast(List_relasi &L, address_relasi &P);
 void deleteAfter(address_relasi Prec, address_relasi &P);
-void deleterelasi(List_relasi &L, address_relasi &P);
-address_relasi alokasi( address_child C);
+address_relasi alokasi(address_child C);
 void dealokasi(address_relasi &P);
 address_relasi findElm(List_relasi L, address_child C);
 void printInfo(List_relasi L);
 
+/**Case Functionality*/
+int jumlahJenisObatSatuApotik(List_relasi L);
+void deleterelasi(List_relasi &L, address_relasi &P);
 
 #endif // LIST_RELASI_H_INCLUDED
