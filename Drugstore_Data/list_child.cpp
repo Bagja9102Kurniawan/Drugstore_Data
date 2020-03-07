@@ -38,8 +38,15 @@ void insertFirst(List_child &L, address_child P) {
     * FS : element pointed by P became the first element in List_child L
     */
 
-    next(P) = first(L);
-    first(L) = P;
+    if(isEmpty(L)){
+        First(L) = P;
+    }else{
+        next(P) = First(L);
+        prev(P) = prev(First(L));
+        next(prev(First(L))) = P;
+        prev(First(L)) = P;
+        First(L) = P;
+    }
 
 }
 

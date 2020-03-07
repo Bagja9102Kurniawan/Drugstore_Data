@@ -16,9 +16,19 @@ address_relasi alokasi(address_child C) {
     return P;
 }
 
+void dealokasi(address_child &P){
+    delete P;
+}
+
 void insertFirst(List_relasi &L, address_relasi P) {
-    next(P) = first(L);
-    first(L) = P;
+    if(isempty(L)){
+        first(L) = P;
+        last(L) = P;
+    }
+    else {
+        next(P) = first(L);
+        first(L) = P;
+    }
 }
 
 void insertLast(List_relasi &L, address_relasi P) {
@@ -30,6 +40,11 @@ void insertLast(List_relasi &L, address_relasi P) {
         next(last(L)) = P;
         last(L) = P;
     }
+}
+
+void insertAfter(address_relasi &Prec, address_relasi P) {
+    next(P) = next(Prec);
+    next(Prec) = P;
 }
 
 void printInfo(List_relasi L) {
@@ -49,11 +64,6 @@ address_relasi findElm(List_relasi L, address_child C) {
         P = next(P);
     }
     return NULL;
-}
-
-void insertAfter(address_relasi &Prec, address_relasi P) {
-    next(P) = next(Prec);
-    next(Prec) = P;
 }
 
 void deleteFirst(List_relasi &L, address_relasi &P) {

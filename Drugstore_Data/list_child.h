@@ -4,11 +4,10 @@
 #include <iostream>
 using namespace std;
 
-/**Single Linear !!!!!!!!!*/
+/**Double Circular !!!!!!!!!*/
 #define next(P) P->next
 #define info(P) P->info
 #define first(L) L.first
-#define last(L) L.last
 
 struct data{
     int ID;
@@ -22,11 +21,11 @@ typedef struct elmlist_child *address_child;
 struct elmlist_child{
     infotype_child info;
     address_child next;
+    address_child prev;
 };
 
 struct List_child{
     address_child first;
-    address_child last;
 };
 
 void createList(List_child &L);

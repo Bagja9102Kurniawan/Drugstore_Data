@@ -14,8 +14,8 @@ address_parent createNewElmt(infotype_parent x)
 {
     address_parent P = new elmList_parent;
     info(P) = x ;
-    next(P) = P;
-    prev(P) = P;
+    next(P) = NULL;
+    child(P) = NULL;
     return P;
 }
 
@@ -23,26 +23,47 @@ void insertFirst(List_parent &L, address_parent P){
     if(isEmpty(L)){
         First(L) = P;
     }else{
-        next(P) = First(L);
-        prev(P) = prev(First(L));
-        next(prev(First(L))) = P;
-        prev(First(L)) = P;
-        First(L) = P;
+        next(P) = first(L);
+        first(L) = P;
     }
 }
-void insertAfter(address_parent Prec, address_parent P){
-    next(P) = next(Prec);
-    prev(P) = Prec;
-    next(Prec) = P;
-    prev(next(P)) = P;
+
+void insertAfter(List_parent &L, address_parent Prec, address_parent P){
+    if(isEmpty(L)){
+        First(L) = P;
+    }else if(Prec = last(L)) {
+        insertLast(L, P);
+    }else{
+        next(P) = next(Prec);
+        next(Prec) = P;
+    }
 }
+
+void insertLast(List_parent &L, address_parent P){
+    if(isEmpty(L)){
+        First(L) = P;
+    }else{
+        next(last(L)) = P;
+        last(L) = P;
+    }
+}
+
 void deleteFirst(List_parent &L, address_parent &P){
-    P = First(L);
-    First(L) = next(P);
-    next(prev(P)) = First(L);
-    prev(First(L)) = prev(P);
-    prev(P) = NIL;
-    next(P) = NIL;
+        if(!isempty(L)){
+            if(first(L) == last(L)){
+                deleterelasi(L,P);
+            }
+            else{
+                address_relasi Q;
+                Q = first(L);
+                while(next(Q) != last(L)){
+                    Q = next(Q);
+                }
+                P = last(L);
+                last(L) = Q;
+                next(Q) = NULL;
+        }
+    }
 }
 void deleteAfter(address_parent Prec, address_parent &P){
     P = next(Prec);

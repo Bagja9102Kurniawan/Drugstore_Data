@@ -4,8 +4,9 @@
 #include <iostream>
 using namespace std;
 
-/**Double Circular !!!!!!!*/
+/**Single Linear !!!!!!!*/
 #define first(L) L.first
+#define last(L) L.last
 #define next(P) P->next
 #define prev(P) P->prev
 #define info(P) P->info
@@ -24,11 +25,11 @@ struct elmlist_parent {
     infotype_parent info;
     List_relasi child;
     address_parent next;
-    address_parent prev;
 };
 
 struct List_parent {
     address_parent first;
+    address_parent last;
 };
 
 
