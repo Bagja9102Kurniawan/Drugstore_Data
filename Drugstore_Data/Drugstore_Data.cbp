@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="general.h" />
 		<Unit filename="list_child.cpp" />
 		<Unit filename="list_child.h" />
 		<Unit filename="list_parent.cpp" />
@@ -39,6 +40,7 @@
 		<Unit filename="list_relasi.cpp" />
 		<Unit filename="list_relasi.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="operation.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

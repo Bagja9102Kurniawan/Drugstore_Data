@@ -7,8 +7,8 @@ using namespace std;
 #define next(P) P->next
 #define prev(P) P->prev
 #define info(P) P->info
-#define child(P) P->child
-#define contain(P) P->contain
+#define apt(P) P->apt
+#define ctn(P) P->ctn
 #define last(L) L.last
 #define first(L) L.first
 
@@ -16,7 +16,7 @@ using namespace std;
 struct obat{
     int IDobat;
     string namaObat;
-    int jumObat;
+    int hargaObat;
 };
 
 struct apotik {
@@ -26,8 +26,6 @@ struct apotik {
 };
 
 /**TYPEDEF*/
-typedef obat infotype_child;
-typedef apotik infotype_parent;
 typedef struct elmlist_relasi *address_relasi;
 typedef struct elmlist_child *address_child;
 typedef struct elmlist_parent *address_parent;
@@ -35,21 +33,21 @@ typedef struct elmlist_parent *address_parent;
 /**ELMLIST*/
 struct elmlist_parent {
     /**SLLL*/
-    infotype_parent apotik;
-    List_relasi child;
+    apotik info;
     address_parent next;
 };
 
 struct elmlist_child {
     /**DLLC*/
-    infotype_child obat;
+    obat info;
     address_child next;
     address_child prev;
 };
 
 struct elmlist_relasi {
     /**SLLL*/
-    address_child contain;
+    address_child ctn;
+    address_parent apt;
     address_relasi next;
 };
 
@@ -67,6 +65,5 @@ struct List_relasi {
     address_parent first;
     address_parent last;
 };
-
 
 #endif // GENERAL_H_INCLUDED
