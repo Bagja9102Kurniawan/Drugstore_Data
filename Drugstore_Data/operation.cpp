@@ -3,7 +3,9 @@
 #include "list_parent.h"
 #include "general.h"
 
+/**
 void deleteApt()
 void deleteMed()
 void deleteRel()
 void addMed()
+**/

@@ -26,32 +26,45 @@
 1582820851 source:c:\latihan coding\drugstore_data\drugstore_data\list_child.h
 	<iostream>
 
-1582875406 source:d:\github\drugstore_data\drugstore_data\list_child.cpp
+1587796735 source:d:\github\drugstore_data\drugstore_data\list_child.cpp
 	"List_child.h"
 
-1584115009 d:\github\drugstore_data\drugstore_data\list_child.h
+1587796735 d:\github\drugstore_data\drugstore_data\list_child.h
 	"general.h"
 
-1584115009 source:d:\github\drugstore_data\drugstore_data\list_parent.cpp
+1587796735 source:d:\github\drugstore_data\drugstore_data\list_parent.cpp
 	"List_parent.h"
 
-1584115009 d:\github\drugstore_data\drugstore_data\list_parent.h
+1587796735 d:\github\drugstore_data\drugstore_data\list_parent.h
 	"general.h"
 
-1584115009 source:d:\github\drugstore_data\drugstore_data\list_relasi.cpp
+1587796735 source:d:\github\drugstore_data\drugstore_data\list_relasi.cpp
 	"list_relasi.h"
 
-1584115009 d:\github\drugstore_data\drugstore_data\list_relasi.h
+1587796735 d:\github\drugstore_data\drugstore_data\list_relasi.h
 	"general.h"
 
-1584115009 d:\github\drugstore_data\drugstore_data\general.h
+1587796735 d:\github\drugstore_data\drugstore_data\general.h
 	<iostream>
 
-1584115009 source:d:\github\drugstore_data\drugstore_data\main.cpp
+1587796735 source:d:\github\drugstore_data\drugstore_data\main.cpp
 	"list_relasi.h"
 	"list_child.h"
 	"list_parent.h"
+	"general.h"
 
 1587740257 c:\latihan coding\drugstore_data\drugstore_data\general.h
 	<iostream>
+
+1587792900 source:d:\tugas praktikum std\coba\coba.cpp
+	"coba.h"
+
+1587792158 d:\tugas praktikum std\coba\coba.h
+	<iostream>
+
+1587796945 source:d:\github\drugstore_data\drugstore_data\operation.cpp
+	"list_relasi.h"
+	"list_child.h"
+	"list_parent.h"
+	"general.h"
 

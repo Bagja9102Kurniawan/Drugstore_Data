@@ -32,9 +32,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="../../../Tugas Praktikum STD/coba/coba.cpp" />
+		<Unit filename="../../../Tugas Praktikum STD/coba/coba.h" />
 		<Unit filename="general.h" />
-		<Unit filename="list_child.cpp" />
-		<Unit filename="list_child.h" />
 		<Unit filename="list_parent.cpp" />
 		<Unit filename="list_parent.h" />
 		<Unit filename="list_relasi.cpp" />
