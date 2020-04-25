@@ -8,7 +8,7 @@ void createList_child(List_child &L)
     first(L) = NULL;
 }
 
-address_child allocate(infotype_child x)
+address_child allocate(obat x)
 {
     /**
     * FS : return new List_child element with info = x and next element is Null
@@ -72,7 +72,7 @@ void insertLast(List_child &L, address_child P)
     }
 }
 
-address_child findElm(List_child L, infotype_child x)
+address_child findElm(List_child L, obat x)
 {
     /**
         * IS : List_child L may be empty

@@ -12,9 +12,9 @@ void insertAfter(address_child Prec, address_child P);
 void deleteFirst(List_child &L, address_child &P);
 void deleteLast(List_child &L, address_child &P);
 void deleteAfter(address_child Prec, address_child &P);
-address_child alokasi(infotype_child x);
+address_child alokasi(obat x);
 void dealokasi(address_child &P);
-address_child findElm(List_child L, infotype_child x);
+address_child findElm(List_child L, obat x);
 void printInfo(List_child L);
 
 /**Case Functionality*/
