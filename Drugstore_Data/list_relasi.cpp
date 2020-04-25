@@ -9,11 +9,12 @@ bool isempty(List_relasi L){
     return first(L) == NULL && last(L) == NULL;
 }
 
-address_relasi alokasi(address_child C) {
-    address_relasi P = new elmlist_relasi;
-    info(P) = C;
-    next(P) = NULL;
-    return P;
+address_relasi alokasi(address_parent P, address_child C) {
+    R = new elmlist_relasi;
+    apt(P) = P;
+    ctn(P) = C;
+    next(P) = NIL;
+    return R;
 }
 
 void dealokasi(address_child &P){
@@ -50,18 +51,18 @@ void insertAfter(address_relasi &Prec, address_relasi P) {
 void printInfo(List_relasi L) {
     address_relasi P = first(L);
     while(P !=NULL) {
-        cout<<"->"<<info(info(P))<<endl;
+        cout<<"->"<<apt(P)<<" MEMILIKI OBAT "<<ctn(P)<<endl;
         P = next(P);
     }
 }
 
-address_relasi findElm(List_relasi L, address_child C) {
-    address_relasi P = first(L);
-    while(P != NULL) {
-        if(info(P)== C) {
-            return P;
+address_relasi findElm(List_relasi L,address_parent P, address_child C) {
+    address_relasi R = first(L);
+    while(R != NULL) {
+        if(ctn(R)== C && apt(R) == P) {
+            return R;
         }
-        P = next(P);
+        R = next(R);
     }
     return NULL;
 }
@@ -82,10 +83,12 @@ void deleteFirst(List_relasi &L, address_relasi &P) {
 
 }
 
-void deleteFirst(List_relasi &L, address_relasi &P) {
+void deleteLast(List_relasi &L, address_relasi &P) {
     if(!isempty(L)){
         if(first(L) == last(L)){
-            deletefirstrelasi(L,P);
+            P = first(L);
+            first(L) = NULL;
+            last(L) = NULL;
         }
         else{
             address_relasi Q;
@@ -106,6 +109,8 @@ void deleteAfter(List_relasi &L, address_relasi prec, address_relasi &P){
     }
     else if (next(prec) == NULL){
         cout<< "Tidak dapat mendelete"<< endl;
+    }else if(next(Prec)==last(L)){
+        deleteLast(L,P);
     }
     else{
         if (next(prec) == last(L)){

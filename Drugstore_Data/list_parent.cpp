@@ -2,10 +2,10 @@
 
 bool isEmpty(List_parent L)
 {
-    return (first(L)==NIL);
+    return (first(L) == NULL && last(L) == NULL);
 }
 
-void createList_parent(List_parent &L)
+void createList(List_parent &L)
 {
     first(L) = NIL;
     last(L) = NIL;
@@ -72,7 +72,7 @@ void deleteLast(List_parent &L, address_parent &P){
         deleteFirst(L,P);
     }else{
         address_relasi Q = first(L);
-        while(next(next(Q))!= NIL){
+        while(next(Q)!= last(L)){
             Q = next(Q);
         }
         P = next(Q);
@@ -86,6 +86,10 @@ void deleteAfter(List_parent &L, address_parent Prec, address_parent &P){
         cout<<"LIST KOSONG"<<endl;
     }else if(next(Prec)==last(L)){
         deleteLast(L,P);
+    }
+    else if (next(Prec) == NULL){
+        cout<< "Tidak dapat mendelete"<< endl;
+    }
     }else{
         P = next(Prec);
         next(Prec) = next(P);
@@ -105,6 +109,14 @@ void printInfo(List_parent L){
 address_parent findElm(List_parent L, apotik x){
     address_parent P = first(L);
     while(P!=NULL && info(P)!= x){
+        P = next(P);
+    }
+    return P;
+}
+
+address_parent findElm(List_parent L, int x){
+    address_parent P = first(L);
+    while(P!=NULL && info(P).IDapotik!= x){
         P = next(P);
     }
     return P;

@@ -17,6 +17,7 @@ void dealokasi(address_parent &P);
 void createList(List_parent &L);
 address_parent alokasi(apotik x);
 address_parent findElm(List_parent L, apotik x);
+address_parent findElmID(List_parent L, int x);
 void printInfo(List_parent L);
 
 /**Case Functionality*/
