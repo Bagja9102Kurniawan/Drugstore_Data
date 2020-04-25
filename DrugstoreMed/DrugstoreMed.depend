@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1514140574 source:c:\latihan coding\drugstoremed\main.cpp
+	<iostream>
+
+1587808029 source:c:\latihan coding\drugstoremed\drugstore.cpp
+	"drugstore.h"
+
+1587807883 c:\latihan coding\drugstoremed\drugstore.h
+	<iostream>
+
+1587810797 source:c:\latihan coding\drugstoremed\medicine.cpp
+	"medicine.h"
+
+1587808515 c:\latihan coding\drugstoremed\medicine.h
+	<iostream>
+
+1587810855 source:c:\latihan coding\drugstoremed\relation.cpp
+	"relation.h"
+
+1587809314 c:\latihan coding\drugstoremed\relation.h
+	<iostream>
+	"drugstore.h"
+	"medicine.h"
+
