@@ -8,7 +8,8 @@ using namespace std;
 
 int main()
 {
-    int pil;
+    void menu();
+   /** int pil;
 
     apotik aptx;
     adrapt adpt;
@@ -128,15 +129,12 @@ int main()
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
-        }
-    }
-    while ((menu >=1) && (menu <= 13)) ;
-
-
+        } */
+    menu();
     return 0;
 }
 
-int menu(){
+void menu(){
     cout << " =====================SEHAT ASIK JAYA ASRI 4646=====================" << endl ;
     cout << " 1. Tambah apotik " << endl ;
     cout << " 2. Tambah obat " << endl ;
