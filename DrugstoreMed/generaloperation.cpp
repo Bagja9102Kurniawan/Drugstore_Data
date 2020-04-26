@@ -36,8 +36,7 @@ int countMed(lire L)
 {
     /** Manuel Benedict (1301194182) */
     adre P ;
-    adrapt Q ;
-    adrapt apt;
+    adrapt Q,apt ;
     int i ;
     P = first(L) ;
     while (next(P) != NULL)
@@ -59,8 +58,7 @@ void listMedfApt(lire L) /**obat tersedia di apotik ? */
 {
     /** Manuel Benedict (1301194182) */
     adre P ;
-    adrapt Q ;
-    adrapt apt;
+    adrapt Q,apt ;
     admed ctn ;
     int i ;
     P = first(L) ;
