@@ -48,7 +48,6 @@ int countMed(lire L)
         }
     }
     return i ;
-
 }
 
 int countApt(lire L)
