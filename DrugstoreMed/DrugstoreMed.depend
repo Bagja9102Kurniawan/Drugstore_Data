@@ -56,3 +56,31 @@
 	"drugstore.h"
 	"relation.h"
 
+1587879818 source:c:\latihan coding\drugstore_data\drugstoremed\drugstore.cpp
+	"drugstore.h"
+
+1587807883 c:\latihan coding\drugstore_data\drugstoremed\drugstore.h
+	<iostream>
+
+1587879818 source:c:\latihan coding\drugstore_data\drugstoremed\medicine.cpp
+	"medicine.h"
+
+1587808515 c:\latihan coding\drugstore_data\drugstoremed\medicine.h
+	<iostream>
+
+1587810855 source:c:\latihan coding\drugstore_data\drugstoremed\relation.cpp
+	"relation.h"
+
+1587809314 c:\latihan coding\drugstore_data\drugstoremed\relation.h
+	<iostream>
+	"drugstore.h"
+	"medicine.h"
+
+1587880746 source:c:\latihan coding\drugstore_data\drugstoremed\generaloperation.cpp
+	"generaloperation.h"
+
+1587880320 c:\latihan coding\drugstore_data\drugstoremed\generaloperation.h
+	"medicine.h"
+	"drugstore.h"
+	"relation.h"
+

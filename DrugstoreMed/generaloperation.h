@@ -5,7 +5,8 @@
 #include "relation.h"
 
 void connect(lire L, adrapt P, admed C);
-void disconnect(lire &L, adrapt P, admed C);
+void disconnectmed(lire &L, adrapt P, admed C); /**mendiskonek med dari apt*/
+void disconnectapt(lire &L, adrapt P, admed C); /**mendiskonek apt dari med*/
 int countMed(lire L);
 int countApt(lire L);
 void listMedfApt(lire L); /**obat tersedia di apotik ? */
