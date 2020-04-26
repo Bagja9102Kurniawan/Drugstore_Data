@@ -32,7 +32,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="drugstore.cpp" />
+		<Unit filename="drugstore.h" />
+		<Unit filename="generaloperation.cpp" />
+		<Unit filename="generaloperation.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="medicine.cpp" />
+		<Unit filename="medicine.h" />
+		<Unit filename="relation.cpp" />
+		<Unit filename="relation.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
