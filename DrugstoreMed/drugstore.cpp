@@ -11,7 +11,9 @@ void createList(Listapt &L){
 
 adrapt alokasi(apotik x){
     adrapt P = new elmapt;
-    info(P) = x ;
+    info(P).IDapotik = x.IDapotik ;
+    info(P).namaApotik = x.namaApotik ;
+    info(P).noIzin = x.noIzin;
     next(P) = NIL;
     return P;
 }
@@ -96,10 +98,11 @@ void deleteAfter(Listapt &L, adrapt Prec, adrapt &P){
 
 void printInfo(Listapt L){
     adrapt P = first(L);
-    while(P != NIL){
-        cout<< info(P).IDapotik<<"\t"<< info(P).namaApotik<<"\t"<< info(P).noIzin<<endl;
+    while(P != NIL)
+    {
+        cout<< info(P).IDapotik<<" "<< info(P).namaApotik<<" "<< info(P).noIzin<<endl;
         P = next(P);
-    };
+    }
     cout<<endl;
 }
 

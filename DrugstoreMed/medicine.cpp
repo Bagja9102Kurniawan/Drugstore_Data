@@ -1,7 +1,7 @@
 #include"medicine.h"
 
 void createList(limed &L) {
-    first(L) = NULL;
+    first(L) = NULL ;
 }
 
 void insertFirst(limed &L, admed P){
@@ -100,8 +100,8 @@ admed alokasi(obat x){
     info(P).namaObat = x.namaObat;
     info(P).hargaObat = x.hargaObat;
     next(P) = NULL;
-    prev(P) = NULL;
-    return P;
+    prev(P) = NULL ;
+    return P ;
 }
 
 void dealokasi(admed &P){
@@ -121,7 +121,6 @@ admed findElm(limed L, obat x){
 
 void printInfo(limed L){
     admed P = first(L);
-    cout << "My output : ";
     do
     {
         cout <<info(P).IDobat<<" "<<info(P).namaObat<<" "<<info(P).hargaObat<<endl;
@@ -149,5 +148,5 @@ int jumlahJenisObat(limed L){
 }
 
 bool obatKosong(limed L){
-    return (first(L) = NULL) ;
+    return (first(L) == NULL) ;
 }
