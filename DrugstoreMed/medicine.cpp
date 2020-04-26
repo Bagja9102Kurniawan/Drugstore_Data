@@ -1,10 +1,12 @@
 #include"medicine.h"
 
-void createList(limed &L) {
+void createListMed(limed &L) {
+    /**Manuel Benedict (1301194182)*/
     first(L) = NULL ;
 }
 
-void insertFirst(limed &L, admed P){
+void insertFirstMed(limed &L, admed P){
+    /**Manuel Benedict (1301194182)*/
     if(obatKosong(L))
     {
         first(L) = P;
@@ -21,10 +23,11 @@ void insertFirst(limed &L, admed P){
     }
 }
 
-void insertLast(limed &L, admed P){
+void insertLastMed(limed &L, admed P){
+    /**Manuel Benedict (1301194182)*/
     if (first(L) == NULL)
     {
-        insertFirst(L,P);
+        insertFirstMed(L,P);
     }
     else
     {
@@ -35,14 +38,16 @@ void insertLast(limed &L, admed P){
     }
 }
 
-void insertAfter(admed Prec, admed P){
+void insertAfterMed(admed Prec, admed P){
+    /**Manuel Benedict (1301194182)*/
     prev(next(Prec)) = P;
     next(P) = next(Prec);
     next(Prec) = P;
     prev(P) = Prec;
 }
 
-void deleteFirst(limed &L, admed &P){
+void deleteFirstMed(limed &L, admed &P){
+    /**Manuel Benedict (1301194182)*/
     P = first(L);
     if (next(P) == first(L))
     {
@@ -60,7 +65,8 @@ void deleteFirst(limed &L, admed &P){
     }
 }
 
-void deleteLast(limed &L, admed &P){
+void deleteLastMed(limed &L, admed &P){
+    /**Manuel Benedict (1301194182)*/
     P = first(L);
     if (next(P) == first(L))
     {
@@ -76,7 +82,8 @@ void deleteLast(limed &L, admed &P){
     }
 }
 
-void deleteAfter(admed Prec, admed &P){
+void deleteAfterMed(admed Prec, admed &P){
+    /**Manuel Benedict (1301194182)*/
     P = next(Prec);
     if (next(next(Prec)) == Prec)
     {
@@ -94,7 +101,8 @@ void deleteAfter(admed Prec, admed &P){
     }
 }
 
-admed alokasi(obat x){
+admed alokasiMed(obat x){
+    /**Manuel Benedict (1301194182)*/
     admed P = new elmed;
     info(P).IDobat = x.IDobat;
     info(P).namaObat = x.namaObat;
@@ -104,19 +112,21 @@ admed alokasi(obat x){
     return P ;
 }
 
-void dealokasi(admed &P){
+void dealokasiMed(admed &P){
+    /**Manuel Benedict (1301194182)*/
     delete P ;
 }
 
-admed findElmIDMed(limed L, obat x){
+admed findElmIDMed(limed L, int x){
+    /**Manuel Benedict (1301194182)*/
     admed P;
     P = first(L);
     do
     {
         P = next(P);
     }
-    while((P != first(L)) && (x.IDobat != info(P).IDobat));
-    if((P == first(L)) && (x.IDobat != info(P).IDobat)){
+    while((P != first(L)) && (x != info(P).IDobat));
+    if((P == first(L)) && (x != info(P).IDobat)){
         return NIL;
     }else{
         return P;
@@ -124,6 +134,7 @@ admed findElmIDMed(limed L, obat x){
 }
 
 admed findElmMed(limed L, string x){
+    /**Bagja 9102 Kurniawan*/
     admed P;
     P = first(L);
     do
@@ -138,7 +149,8 @@ admed findElmMed(limed L, string x){
     }
 }
 
-void printInfo(limed L){
+void printInfoMed(limed L){
+    /**Manuel Benedict (1301194182)*/
     admed P = first(L);
     do
     {
@@ -150,6 +162,7 @@ void printInfo(limed L){
 }
 
 int jumlahJenisObat(limed L){
+    /**Manuel Benedict (1301194182)*/
     admed P;
     P = first(L);
     int i ;
@@ -167,5 +180,6 @@ int jumlahJenisObat(limed L){
 }
 
 bool obatKosong(limed L){
+    /**Manuel Benedict (1301194182)*/
     return (first(L) == NULL) ;
 }

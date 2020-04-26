@@ -35,17 +35,18 @@ struct limed {
 
 /**Double Circular !!!!!!!*/
 
-void createList(limed &L);
-void insertFirst(limed &L, admed P);
-void insertLast(limed &L, admed P);
-void insertAfter(admed Prec, admed P);
-void deleteFirst(limed &L, admed &P);
-void deleteLast(limed &L, admed &P);
-void deleteAfter(admed Prec, admed &P);
-admed alokasi(obat x);
-void dealokasi(admed &P);
-admed findElm(limed L, obat x);
-void printInfo(limed L);
+void createListMed(limed &L);
+void insertFirstMed(limed &L, admed P);
+void insertLastMed(limed &L, admed P);
+void insertAfterMed(admed Prec, admed P);
+void deleteFirstMed(limed &L, admed &P);
+void deleteLastMed(limed &L, admed &P);
+void deleteAfterMed(admed Prec, admed &P);
+admed alokasiMed(obat x);
+void dealokasiMed(admed &P);
+admed findElmMed(limed L, string x);
+admed findElmIDMed(limed L, int x);
+void printInfoMed(limed L);
 
 /**Case Functionality*/
 int jumlahJenisObat(limed L);

@@ -32,23 +32,24 @@ struct lire {
 
 /**Single Linear !!!!!!!*/
 
-void createList(lire &L);
+void createListRel(lire &L);
 
-void insertFirst(lire &L, adre P);
-void insertLast(lire &L, adre P);
-void insertAfter(adre Prec, adre P);
+void insertFirstRel(lire &L, adre P);
+void insertLastRel(lire &L, adre P);
+void insertAfterRel(adre Prec, adre P);
 
-void deleteFirst(lire &L, adre &P);
-void deleteLast(lire &L, adre &P);
-void deleteAfter(adre Prec, adre &P);
+void deleteFirstRel(lire &L, adre &P);
+void deleteLastRel(lire &L, adre &P);
+void deleteAfterRel(adre Prec, adre &P);
 
-adre alokasi(adrapt P, admed C);
-void dealokasi(adre &P);
-adre findElm(lire L,adrapt P, admed C);
-void printInfo(lire L);
+adre alokasiRel(adrapt P, admed C);
+void dealokasiRel(adre &P);
+adre findElmRel(lire L,adrapt P, admed C);
+void printInfoRel(lire L);
 
 /**Case Functionality*/
 int jumlahJenisObatSatuApotik(lire L);
 void deleterelasi(lire &L, adre &P);
+bool isempty(lire L);
 
 #endif // RELATION_H_INCLUDED

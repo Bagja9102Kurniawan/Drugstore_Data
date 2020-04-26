@@ -29,8 +29,8 @@ int main()
             cin >> aptx.namaApotik;
             cout << "nomor izin : ";
             cin >> aptx.noIzin;
-            alokasi(aptx) ;
-            insertLast(lapt,adpt) ;
+            adpt = alokasiApt(aptx) ;
+            insertLastApt(lapt,adpt) ;
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
@@ -43,8 +43,8 @@ int main()
             cin >> medx.namaObat;
             cout << "harga obat : ";
             cin >> medx.hargaObat;
-            alokasi(admd) ;
-            insertLast(limd,admd) ;
+            admd = alokasiMed(medx) ;
+            insertLastMed(limd,admd) ;
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
@@ -86,20 +86,19 @@ int main()
             break ;
         case 9 :
             string nama ;
-            obat cari;
             admed R ;
             cout << " ===================== " << endl ;
             cout << " MENCARI OBAT " << endl ;
             cout << "Masukkan nama obat: " ;
-            cin >> cari.namaObat >> endl ;
-            R = findElm(L1,cari)
+            cin >> nama >> endl ;
+            R = findElmIDMed(limd,nama)
             if (R == NULL)
             {
                 cout << "Obat tidak ditemukan" ;
             }
             else
             {
-                cout << "ID Obat: " << cari.IDobat << " dengan harga: " << cari.hargaObat << endl ;
+                cout << "ID Obat: " << info(R).IDobat << " dengan harga: " << info(R).hargaObat << endl ;
             }
             cout << " ===================== " << endl ;
             cout << endl ;

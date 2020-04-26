@@ -28,7 +28,7 @@ void dealokasiApt(adrapt &P){
 
 void insertFirstApt(Listapt &L, adrapt P){
     /**Bagja 9102 Kurniawan (1301194020)*/
-    if(isEmpty(L)){
+    if(isEmptyApt(L)){
         first(L) = P;
         last(L) = P;
     }else{
@@ -39,7 +39,7 @@ void insertFirstApt(Listapt &L, adrapt P){
 
 void insertAfterApt(Listapt &L, adrapt Prec, adrapt P){
     /**Bagja 9102 Kurniawan (1301194020)*/
-    if(isEmpty(L)){
+    if(isEmptyApt(L)){
         first(L) = P;
         last(L) = P;
     }else if(Prec == last(L)) {
@@ -52,7 +52,7 @@ void insertAfterApt(Listapt &L, adrapt Prec, adrapt P){
 
 void insertLastApt(Listapt &L, adrapt P){
     /**Bagja 9102 Kurniawan (1301194020)*/
-    if(isEmpty(L)){
+    if(isEmptyApt(L)){
         first(L) = P;
         last(L) = P;
     }else{
@@ -63,7 +63,7 @@ void insertLastApt(Listapt &L, adrapt P){
 
 void deleteFirstApt(Listapt &L, adrapt &P){
     /**Bagja 9102 Kurniawan (1301194020)*/
-    if(!isEmpty(L)){
+    if(!isEmptyApt(L)){
         P = first(L);
         first(L) = next(P);
         next(P)=NIL;
@@ -74,10 +74,10 @@ void deleteFirstApt(Listapt &L, adrapt &P){
 
 void deleteLastApt(Listapt &L, adrapt &P){
     /**Bagja 9102 Kurniawan (1301194020)*/
-    if(isEmpty(L)){
+    if(isEmptyApt(L)){
         cout<<"LIST KOSONG"<<endl;
     }else if(next(first(L))==NIL){
-        deleteFirst(L,P);
+        deleteFirstApt(L,P);
     }else{
         adrapt Q = first(L);
         while(next(Q)!= last(L)){
@@ -91,10 +91,10 @@ void deleteLastApt(Listapt &L, adrapt &P){
 
 void deleteAfterApt(Listapt &L, adrapt Prec, adrapt &P){
     /**Bagja 9102 Kurniawan (1301194020)*/
-    if(isEmpty(L)){
+    if(isEmptyApt(L)){
         cout<<"LIST KOSONG"<<endl;
     }else if(next(Prec)==last(L)){
-        deleteLast(L,P);
+        deleteLastApt(L,P);
     }
     else if (next(Prec) == NULL){
         cout<< "Tidak dapat mendelete"<< endl;

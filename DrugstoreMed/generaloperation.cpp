@@ -29,7 +29,7 @@ void disconnectapt(lire &L, adrapt P, admed C){
     }
 }
 int countMed(lire L);
-int countApt(lire L);
+int countApt(lire L); */
 void listMedfApt(lire L); /**obat tersedia di apotik ? */
 void listAptfMed(lire L); /**apotuk mentediakan obat ? */
 bool isredundant(lire L);

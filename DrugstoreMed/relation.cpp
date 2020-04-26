@@ -1,15 +1,18 @@
 #include "relation.h"
 
-void createList(lire &L) {
+void createListRel(lire &L) {
+    /**Bagja 9102 Kurniawan (1301194020)*/
     first(L) = NIL;
     last(L) = NIL;
 }
 
 bool isempty(lire L){
+    /**Bagja 9102 Kurniawan (1301194020)*/
     return first(L) == NIL && last(L) == NIL;
 }
 
-adre alokasi(adrapt P, admed C) {
+adre alokasiRel(adrapt P, admed C) {
+    /**Bagja 9102 Kurniawan (1301194020)*/
     adre R = new elmlire;
     apt(R) = P;
     ctn(R) = C;
@@ -17,11 +20,13 @@ adre alokasi(adrapt P, admed C) {
     return R;
 }
 
-void dealokasi(adre &P){
+void dealokasiRel(adre &P){
+    /**Bagja 9102 Kurniawan (1301194020)*/
     delete P;
 }
 
-void insertFirst(lire &L, adre P) {
+void insertFirstRel(lire &L, adre P) {
+    /**Bagja 9102 Kurniawan (1301194020)*/
     if(isempty(L)){
         first(L) = P;
         last(L) = P;
@@ -32,7 +37,8 @@ void insertFirst(lire &L, adre P) {
     }
 }
 
-void insertLast(lire &L, adre P) {
+void insertLastRel(lire &L, adre P) {
+    /**Bagja 9102 Kurniawan (1301194020)*/
     if(isempty(L)){
         first(L) = P;
         last(L) = P;
@@ -43,12 +49,14 @@ void insertLast(lire &L, adre P) {
     }
 }
 
-void insertAfter(adre &Prec, adre P) {
+void insertAfterRel(adre &Prec, adre P) {
+    /**Bagja 9102 Kurniawan (1301194020)*/
     next(P) = next(Prec);
     next(Prec) = P;
 }
 
-void printInfo(lire L) {
+void printInfoRel(lire L) {
+    /**Bagja 9102 Kurniawan (1301194020)*/
     adre P = first(L);
     while(P !=NIL) {
         cout<<"->"<<apt(P)<<" MEMILIKI OBAT "<<ctn(P)<<endl;
@@ -56,7 +64,8 @@ void printInfo(lire L) {
     }
 }
 
-adre findElm(lire L,adrapt P, admed C) {
+adre findElmRel(lire L,adrapt P, admed C) {
+    /**Bagja 9102 Kurniawan (1301194020)*/
     adre R = first(L);
     while(R != NIL) {
         if(ctn(R)== C && apt(R) == P) {
@@ -67,7 +76,8 @@ adre findElm(lire L,adrapt P, admed C) {
     return NIL;
 }
 
-void deleteFirst(lire &L, adre &P) {
+void deleteFirstRel(lire &L, adre &P) {
+    /**Bagja 9102 Kurniawan (1301194020)*/
     if(!isempty(L)){
         if(first(L) == last(L)){
             P = first(L);
@@ -83,7 +93,8 @@ void deleteFirst(lire &L, adre &P) {
 
 }
 
-void deleteLast(lire &L, adre &P) {
+void deleteLastRel(lire &L, adre &P) {
+    /**Bagja 9102 Kurniawan (1301194020)*/
     if(!isempty(L)){
         if(first(L) == last(L)){
             P = first(L);
@@ -103,18 +114,19 @@ void deleteLast(lire &L, adre &P) {
     }
 }
 
-void deleteAfter(lire &L, adre prec, adre &P){
+void deleteAfterRel(lire &L, adre prec, adre &P){
+    /**Bagja 9102 Kurniawan (1301194020)*/
     if(isempty(L)){
         cout<< "LIST KOSONG"<< endl;
     }
     else if (next(prec) == NIL){
         cout<< "Tidak dapat mendelete"<< endl;
     }else if(next(prec)==last(L)){
-        deleteLast(L,P);
+        deleteLastRel(L,P);
     }
     else{
         if (next(prec) == last(L)){
-            deleteLast(L,P);
+            deleteLastRel(L,P);
         }
         else {
             P = next(prec);
@@ -125,19 +137,20 @@ void deleteAfter(lire &L, adre prec, adre &P){
 }
 
 void deleterelasi(lire &L, adre &P){
+    /**Bagja 9102 Kurniawan (1301194020)*/
     if(P!=NIL){
         if(P == first(L)){
-            deleteFirst(L,P);
+            deleteFirstRel(L,P);
         }
         else if(P == last(L)){
-            deleteLast(L,P);
+            deleteLastRel(L,P);
         }
         else {
             adre Q = first(L);
             while(next(Q) != P){
                 Q = next(Q);
             }
-            deleteAfter(L,Q,P);
+            deleteAfterRel(L,Q,P);
         }
     }
 }
