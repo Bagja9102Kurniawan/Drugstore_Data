@@ -37,23 +37,23 @@ struct Listapt {
 
 /**Single Linear !!!!!!!*/
 
-void insertFirst(Listapt &L, adrapt P);
-void insertAfter(Listapt &L, adrapt Prec, adrapt P);
-void insertLast(Listapt &L, adrapt P);
+void insertFirstApt(Listapt &L, adrapt P);
+void insertAfterApt(Listapt &L, adrapt Prec, adrapt P);
+void insertLastApt(Listapt &L, adrapt P);
 
-void deleteFirst(Listapt &L, adrapt &P);
-void deleteLast(Listapt &L, adrapt &P);
-void deleteAfter(Listapt &L, adrapt Prec, adrapt &P);
+void deleteFirstApt(Listapt &L, adrapt &P);
+void deleteLastApt(Listapt &L, adrapt &P);
+void deleteAfterApt(Listapt &L, adrapt Prec, adrapt &P);
 
-void dealokasi(adrapt &P);
-void createList(Listapt &L);
-adrapt alokasi(apotik x);
-adrapt findElm(Listapt L, string x);
-adrapt findElmID(Listapt L, int x);
-void printInfo(Listapt L);
+void dealokasiApt(adrapt &P);
+void createListApt(Listapt &L);
+adrapt alokasiApt(apotik x);
+adrapt findElmApt(Listapt L, string x);
+adrapt findElmIDApt(Listapt L, int x);
+void printInfoApt(Listapt L);
 
 /**Case Functionality*/
 int jumlahApotik(Listapt L);
-bool isEmpty(Listapt L);
+bool isEmptyApt(Listapt L);
 
 #endif // DRUGSTORE_H_INCLUDED

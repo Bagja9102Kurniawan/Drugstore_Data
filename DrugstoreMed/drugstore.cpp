@@ -1,15 +1,18 @@
 #include "drugstore.h"
 
-bool isEmpty(Listapt L){
-    return (first(L) == NULL && last(L) == NULL);
+bool isEmptyApt(Listapt L){
+    /**Bagja 9102 Kurniawan (1301194020)*/
+    return (first(L) == NIL && last(L) == NIL);
 }
 
-void createList(Listapt &L){
+void createListApt(Listapt &L){
+    /**Bagja 9102 Kurniawan (1301194020)*/
     first(L) = NIL;
     last(L) = NIL;
 }
 
-adrapt alokasi(apotik x){
+adrapt alokasiApt(apotik x){
+    /**Bagja 9102 Kurniawan (1301194020)*/
     adrapt P = new elmapt;
     info(P).IDapotik = x.IDapotik ;
     info(P).namaApotik = x.namaApotik ;
@@ -18,11 +21,13 @@ adrapt alokasi(apotik x){
     return P;
 }
 
-void dealokasi(adrapt &P){
+void dealokasiApt(adrapt &P){
+    /**Bagja 9102 Kurniawan (1301194020)*/
     delete P;
 }
 
-void insertFirst(Listapt &L, adrapt P){
+void insertFirstApt(Listapt &L, adrapt P){
+    /**Bagja 9102 Kurniawan (1301194020)*/
     if(isEmpty(L)){
         first(L) = P;
         last(L) = P;
@@ -32,19 +37,21 @@ void insertFirst(Listapt &L, adrapt P){
     }
 }
 
-void insertAfter(Listapt &L, adrapt Prec, adrapt P){
+void insertAfterApt(Listapt &L, adrapt Prec, adrapt P){
+    /**Bagja 9102 Kurniawan (1301194020)*/
     if(isEmpty(L)){
         first(L) = P;
         last(L) = P;
     }else if(Prec == last(L)) {
-        insertLast(L, P);
+        insertLastApt(L, P);
     }else{
         next(P) = next(Prec);
         next(Prec) = P;
     }
 }
 
-void insertLast(Listapt &L, adrapt P){
+void insertLastApt(Listapt &L, adrapt P){
+    /**Bagja 9102 Kurniawan (1301194020)*/
     if(isEmpty(L)){
         first(L) = P;
         last(L) = P;
@@ -54,7 +61,8 @@ void insertLast(Listapt &L, adrapt P){
     }
 }
 
-void deleteFirst(Listapt &L, adrapt &P){
+void deleteFirstApt(Listapt &L, adrapt &P){
+    /**Bagja 9102 Kurniawan (1301194020)*/
     if(!isEmpty(L)){
         P = first(L);
         first(L) = next(P);
@@ -64,7 +72,8 @@ void deleteFirst(Listapt &L, adrapt &P){
     }
 }
 
-void deleteLast(Listapt &L, adrapt &P){
+void deleteLastApt(Listapt &L, adrapt &P){
+    /**Bagja 9102 Kurniawan (1301194020)*/
     if(isEmpty(L)){
         cout<<"LIST KOSONG"<<endl;
     }else if(next(first(L))==NIL){
@@ -80,7 +89,8 @@ void deleteLast(Listapt &L, adrapt &P){
     }
 }
 
-void deleteAfter(Listapt &L, adrapt Prec, adrapt &P){
+void deleteAfterApt(Listapt &L, adrapt Prec, adrapt &P){
+    /**Bagja 9102 Kurniawan (1301194020)*/
     if(isEmpty(L)){
         cout<<"LIST KOSONG"<<endl;
     }else if(next(Prec)==last(L)){
@@ -96,7 +106,8 @@ void deleteAfter(Listapt &L, adrapt Prec, adrapt &P){
 }
 
 
-void printInfo(Listapt L){
+void printInfoApt(Listapt L){
+    /**Bagja 9102 Kurniawan (1301194020)*/
     adrapt P = first(L);
     while(P != NIL)
     {
@@ -106,7 +117,8 @@ void printInfo(Listapt L){
     cout<<endl;
 }
 
-adrapt findElm(Listapt L, string x){
+adrapt findElmApt(Listapt L, string x){
+    /**Bagja 9102 Kurniawan (1301194020)*/
     adrapt P = first(L);
     while(P!=NULL && info(P).namaApotik!= x){
         P = next(P);
@@ -114,7 +126,8 @@ adrapt findElm(Listapt L, string x){
     return P;
 }
 
-adrapt findElm(Listapt L, int x){
+adrapt findElmApt(Listapt L, int x){
+    /**Bagja 9102 Kurniawan (1301194020)*/
     adrapt P = first(L);
     while(P!=NULL && info(P).IDapotik!= x){
         P = next(P);
@@ -123,6 +136,7 @@ adrapt findElm(Listapt L, int x){
 }
 
 int jumlahApotik(Listapt L){
+    /**Bagja 9102 Kurniawan (1301194020)*/
     adrapt P = first(L);
     int qtnApt = 0;
     while(P != NIL){

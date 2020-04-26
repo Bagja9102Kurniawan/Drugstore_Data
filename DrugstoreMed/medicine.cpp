@@ -108,15 +108,34 @@ void dealokasi(admed &P){
     delete P ;
 }
 
-admed findElm(limed L, obat x){
+admed findElmIDMed(limed L, obat x){
     admed P;
     P = first(L);
     do
     {
         P = next(P);
     }
-    while((next(P) != first(L)) && (x.IDobat != info(P).IDobat));
-    return P;
+    while((P != first(L)) && (x.IDobat != info(P).IDobat));
+    if((P == first(L)) && (x.IDobat != info(P).IDobat)){
+        return NIL;
+    }else{
+        return P;
+    }
+}
+
+admed findElmMed(limed L, string x){
+    admed P;
+    P = first(L);
+    do
+    {
+        P = next(P);
+    }
+    while((P != first(L)) && (x != info(P).namaObat));
+    if((P == first(L)) && (x != info(P).namaObat)){
+        return NIL;
+    }else{
+        return P;
+    }
 }
 
 void printInfo(limed L){
