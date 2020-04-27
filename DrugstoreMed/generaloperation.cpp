@@ -21,6 +21,11 @@ void disconnectmed(lire &L, adrapt P, admed C)
     adre R = first(L);
     while(R!=NIL){
         if(apt(R) == P)
+        {
+            apt(R) = NULL ;
+            ctn(R) = NULL ;
+            dealokasiRel(R) ;
+        }
     }
 }
 void disconnectapt(lire &L, adrapt P, admed C){
