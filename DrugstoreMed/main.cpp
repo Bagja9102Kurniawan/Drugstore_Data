@@ -9,7 +9,9 @@ using namespace std;
 int main()
 {
     void menu();
-    /**int pil;
+    int pil;
+
+    string nambat;
 
     apotik aptx;
     adrapt adpt;
@@ -18,7 +20,8 @@ int main()
     obat medx;
     admed admd;
     limed limd;
-
+    menu();
+    cin >> pil;
     switch (pil)
     {
         case 1 :
@@ -86,34 +89,32 @@ int main()
             cout << endl ;
             break ;
         case 9 :
-            string nama ;
-            admed R ;
             cout << " ===================== " << endl ;
             cout << " MENCARI OBAT " << endl ;
             cout << "Masukkan nama obat: " ;
-            cin >> nama >> endl ;
-            R = findElmIDMed(limd,nama)
-            if (R == NULL)
+            cin >> nambat;
+            admd = findElmMed(limd,nambat);
+            if (admd == NULL)
             {
                 cout << "Obat tidak ditemukan" ;
             }
             else
             {
-                cout << "ID Obat: " << info(R).IDobat << " dengan harga: " << info(R).hargaObat << endl ;
+                cout << "ID Obat: " << info(admd).IDobat << " dengan harga: " << info(admd).hargaObat << endl ;
             }
             cout << " ===================== " << endl ;
             cout << endl ;
         case 10 :
             cout << " ===================== " << endl ;
             cout << " MENAMPILKAN APOTIK " << endl ;
-            printInfo(L1) ;
+            printInfoApt(lapt) ;
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
         case 11 :
             cout << " ===================== " << endl ;
             cout << " MENAMPILKAN OBAT " << endl ;
-            printInfo(L2) ;
+            printInfoMed(limd) ;
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
@@ -129,8 +130,9 @@ int main()
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
-        } */
+        }
     menu();
+    main();
     return 0;
 }
 
