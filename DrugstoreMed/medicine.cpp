@@ -25,9 +25,11 @@ void insertFirstMed(limed &L, admed P){
 
 void insertLastMed(limed &L, admed P){
     /**Manuel Benedict (1301194182)*/
-    if (first(L) == NULL)
+    if(obatKosong(L))
     {
-        insertFirstMed(L,P);
+        first(L) = P;
+        next(P) = P;
+        prev(P) = P;
     }
     else
     {
@@ -157,7 +159,7 @@ void printInfoMed(limed L){
         cout <<info(P).IDobat<<" "<<info(P).namaObat<<" "<<info(P).hargaObat<<endl;
         P = next(P);
     }
-    while (next(P) != NULL);
+    while (P != first(L));
     cout<<endl;
 }
 

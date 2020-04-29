@@ -26,12 +26,12 @@ void connect(lire L, Listapt P, limed C)
     }
     if(N != NIL)
     {
-        cout << "masukkan nama obat ";
+        cout << "masukkan nama obat : ";
         cin >> medi;
         M = findElmMed(C, medi);
         while(M == NIL)
         {
-            cout << "obat tidak ditemukan, mohon coba lagi "<<endl;
+            cout << "obat tidak ditemukan, mohon coba lagi Y/N "<<endl;
             cin >> yes;
             if(yes == "Y" || yes == "y")
             {
