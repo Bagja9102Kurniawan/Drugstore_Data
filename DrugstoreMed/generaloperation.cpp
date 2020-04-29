@@ -1,6 +1,6 @@
 #include "generaloperation.h"
 
-void connect(lire L, adrapt P, admed C){
+void connect(lire L, Listapt P, limed C){
     /**Bagja 9102 Kurniawan (1301194020)*/
     admed M;
     adrapt N;
