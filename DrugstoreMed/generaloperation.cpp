@@ -57,6 +57,12 @@ void disconnectmed(lire &L, admed C)
     /** Manuel Benedict (1301194182) */
     adre Q ;
     adre R = first(L);
+    if(ctn(R) == C){
+        deleteFirstRel(L,Q);
+        apt(Q) = NIL;
+        ctn(Q) = NIL;
+        dealokasiRel(Q);
+    }
     while(R!=NIL){
         if (ctn(R) == C)
         {
@@ -73,6 +79,12 @@ void disconnectapt(lire &L, adrapt P){
     /**Bagja 9102 Kurniawan (1301194020)*/
     adre Q;
     adre R = first(L);
+    if(apt(R) == P){
+        deleteFirstRel(L,Q);
+        apt(Q) = NIL;
+        ctn(Q) = NIL;
+        dealokasiRel(Q);
+    }
     while(R!=NIL){
         if(next(apt(R)) == P){
             deleteAfterRel(L,R,Q);
@@ -88,14 +100,21 @@ void disconnectonerel(lire &L, adrapt P, admed C){
     /**Bagja 9102 Kurniawan (1301194020)*/
     adre Q;
     adre R = first(L);
-    while(R!=NIL){
-        if(next(apt(R)) == P && next(ctn(R)) == C){
-            deleteAfterRel(L,R,Q);
-            apt(Q) = NIL;
-            ctn(Q) = NIL;
-            dealokasiRel(Q);
-        }
+    if(next(apt(R)) == P && next(ctn(R)) == C){
+        deleteFirstRel(L,Q);
+        apt(Q) = NIL;
+        ctn(Q) = NIL;
+        dealokasiRel(Q);
+    }else{
+        while(R!=NIL){
+            if(next(apt(R)) == P && next(ctn(R)) == C){
+                deleteAfterRel(L,R,Q);
+                apt(Q) = NIL;
+                ctn(Q) = NIL;
+                dealokasiRel(Q);
+            }
         R = next(R);
+        }
     }
 }
 
