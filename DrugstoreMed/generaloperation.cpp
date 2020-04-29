@@ -52,19 +52,23 @@ void connect(lire L, Listapt P, limed C){
     }
 }
 
-void disconnectmed(lire &L, adrapt P, admed C)
+void disconnectmed(lire &L, admed C)
 {
     /** Manuel Benedict (1301194182) */
+    adre Q ;
     adre R = first(L);
     while(R!=NIL){
-        if(apt(R) == P)
+        if (ctn(R) == C)
         {
             apt(R) = NULL ;
             ctn(R) = NULL ;
+            deleteAfterRel(L,R,Q) ;
             dealokasiRel(R) ;
         }
+        R = next(R) ;
     }
 }
+
 void disconnectapt(lire &L, adrapt P, admed C){
     /**Bagja 9102 Kurniawan (1301194020)*/
     adre Q;
@@ -83,8 +87,9 @@ int countMed(lire L)
 {
     /** Manuel Benedict (1301194182) */
     adre P ;
-    adrapt Q,apt ;
+    adrapt Q ;
     int i ;
+    i = 0 ;
     P = first(L) ;
     while (next(P) != NULL)
     {
