@@ -60,37 +60,34 @@ void disconnectmed(lire &L, admed C)
     while(R!=NIL){
         if (ctn(R) == C)
         {
-            apt(R) = NULL ;
-            ctn(R) = NULL ;
             deleteAfterRel(L,R,Q) ;
-            dealokasiRel(R) ;
+            apt(Q) = NULL ;
+            ctn(Q) = NULL ;
+            dealokasiRel(Q) ;
         }
         R = next(R) ;
     }
 }
 
-void disconnectapt(lire &L, adrapt P, admed C){
+void disconnectapt(lire &L, adrapt P){
     /**Bagja 9102 Kurniawan (1301194020)*/
     adre Q;
     adre R = first(L);
     while(R!=NIL){
-        if(next(apt(R)) == P && next(ctn(R)) == C){
-            apt(next(R)) = NIL;
-            ctn(next(R)) = NIL;
+        if(next(apt(R)) == P){
             deleteAfterRel(L,R,Q);
+            apt(Q) = NIL;
+            ctn(Q) = NIL;
             dealokasiRel(Q);
         }
         R = next(R);
     }
 }
-int countMed(lire L)
+int countMed(lire L, adrapt Q)
 {
     /** Manuel Benedict (1301194182) */
-    adre P ;
-    adrapt Q ;
-    int i ;
-    i = 0 ;
-    P = first(L) ;
+    adre P = first(L);
+    int i = 0 ;
     while (next(P) != NULL)
     {
         if (apt(P) != Q)
@@ -101,50 +98,44 @@ int countMed(lire L)
     return i ;
 }
 
-int countApt(lire L)
+int countApt(lire L, admed M)
 {
     /**Bagja 9102 Kurniawan (1301194020)*/
-    adrapt P = first(L);
+    adre P = first(L);
     int counter = 0;
     while(P!=NIL){
+        if(ctn(P) == M){
+            counter -= -1;
+        }
         P = next(P);
-        counter -= -1;
     }
     return counter;
 }
 
-void listMedfApt(lire L) /**obat tersedia di apotik ? */
+void listMedfApt(lire L, admed A)
 {
     /** Manuel Benedict (1301194182) */
-    adre P ;
-    adrapt Q,apt ;
-    admed ctn ;
-    int i ;
-    P = first(L) ;
-    while (next(P) != NULL)
-    {
-        if (apt(P) != Q)
-        {
-            cout << "Obat yang tersedia di apotik ini: " << endl ;
-            cout << i << ". " << info(ctn(P)).IDobat << " " << info(ctn(P)).namaObat << " " << info(ctn(P)).hargaObat << endl ;
-            i++ ;
-        }
-        P = next(P) ;
-    }
-}
-
-void listAptfMed(lire L,admed A) /**apotik menyediakan obat ? */
-{
-    /**Bagja 9102 Kurniawan (1301194020)*/
     adre P = first(L);
     cout << "Obat "<< info(A).namaObat<< " tersedia di apotik : ";
     while(P!= NIL){
-        if(apt(P) == A){
-            cout<<apt(P).namaApotik<<", ";
+        if(ctn(P) == A){
+            cout<<info(apt(P)).namaApotik<<", ";
         }
         P = next(P);
     }
+}
 
+void listAptfMed(lire L,adrapt A)
+{
+    /**Bagja 9102 Kurniawan (1301194020)*/
+    adre P = first(L);
+    cout << "Obat-obatan yang tersedia di apotik "<<info(A).namaApotik <<" : ";
+    while(P!= NIL){
+        if(apt(P) == A){
+            cout<<info(ctn(P)).namaObat<<", ";
+        }
+        P = next(P);
+    }
 }
 
 bool isredundant(lire L, adrapt P, admed C)
