@@ -141,5 +141,19 @@ void listAptfMed(lire L,adrapt A)
 bool isredundant(lire L, adrapt P, admed C)
 {
     /** Manuel Benedict (1301194182) */
-
+    bool samaA,samaB,samaC ;
+    adre R = first(L) ;
+    samaC = false ;
+    while (R != NIL)
+    {
+        samaA = (apt(R) == P) && (ctn(R) == C) ;
+        samaB = (apt(next(R)) == P) && (ctn(next(R)) == C) ;
+        if ((samaA == true) && (samaB == true))
+        {
+            break ;
+            samaC = true ;
+        }
+        R = next(R) ;
+    }
+    return samaC ;
 }
