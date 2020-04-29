@@ -40,7 +40,7 @@ void insertAfterRel(adre Prec, adre P);
 
 void deleteFirstRel(lire &L, adre &P);
 void deleteLastRel(lire &L, adre &P);
-void deleteAfterRel(adre Prec, adre &P);
+void deleteAfterRel(lire &L, adre Prec, adre &P);
 
 adre alokasiRel(adrapt P, admed C);
 void dealokasiRel(adre &P);
