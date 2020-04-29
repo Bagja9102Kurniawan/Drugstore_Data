@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
     void menu();
-   /** int pil;
+    /**int pil;
 
     apotik aptx;
     adrapt adpt;

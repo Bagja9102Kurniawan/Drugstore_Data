@@ -71,7 +71,7 @@
 1587892138 source:c:\latihan coding\drugstore_data\drugstoremed\relation.cpp
 	"relation.h"
 
-1587891931 c:\latihan coding\drugstore_data\drugstoremed\relation.h
+1587894249 c:\latihan coding\drugstore_data\drugstoremed\relation.h
 	<iostream>
 	"drugstore.h"
 	"medicine.h"
@@ -79,8 +79,15 @@
 1587892062 source:c:\latihan coding\drugstore_data\drugstoremed\generaloperation.cpp
 	"generaloperation.h"
 
-1587880320 c:\latihan coding\drugstore_data\drugstoremed\generaloperation.h
+1587908658 c:\latihan coding\drugstore_data\drugstoremed\generaloperation.h
 	"medicine.h"
 	"drugstore.h"
 	"relation.h"
+
+1587906021 source:c:\latihan coding\drugstore_data\drugstoremed\main.cpp
+	<iostream>
+	"drugstore.h"
+	"medicine.h"
+	"relation.h"
+	"generaloperation.h"
 

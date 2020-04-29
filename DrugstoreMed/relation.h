@@ -19,8 +19,8 @@ typedef struct elmlire *adre;
 /**ELMLIST*/
 struct elmlire {
     /**SLLL*/
-    admed ctn;
-    adrapt apt;
+    admed ctn; //tunjuk ke child (medicine)
+    adrapt apt; //tunjuk ke parent (drugstore)
     adre next;
 };
 
