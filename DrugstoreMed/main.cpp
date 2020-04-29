@@ -118,12 +118,25 @@ int main()
         case 5 :
             cout << " ===================== " << endl ;
             cout << " APOTIK TUTUP " << endl ;
+            cout << "Masukkan apotik yang ingin ditutup: " ;
+            cin >> namtik ;
+            admd = findElmMed(limd,namtik) ;
+            disconnectmed(lir,admd) ;
+            deleteAfterMed(prev(admd),admd) ;
+            dealokasiMed(admd) ;
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
         case 6 :
             cout << " ===================== " << endl ;
             cout << " OBAT YANG PENJUALANNYA DILARANG " << endl ;
+            cout << "Masukkan obat yang penjualannya dilarang: " ;
+            cin >> nambat ;
+            adpt = findElmApt(lapt,nambat) ;
+            disconnectapt(lir,adpt) ;
+            adrapt Q = findElmApt() ;  /// cara mencari address sebelum obat yang hendak dihapus
+            deleteAfterApt(Q,adpt) ;
+            dealokasiApt(adpt) ;
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
