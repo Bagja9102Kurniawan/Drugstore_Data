@@ -83,6 +83,22 @@ void disconnectapt(lire &L, adrapt P){
         R = next(R);
     }
 }
+
+void disconnectonerel(lire &L, adrapt P, admed C){
+    /**Bagja 9102 Kurniawan (1301194020)*/
+    adre Q;
+    adre R = first(L);
+    while(R!=NIL){
+        if(next(apt(R)) == P && next(ctn(R)) == C){
+            deleteAfterRel(L,R,Q);
+            apt(Q) = NIL;
+            ctn(Q) = NIL;
+            dealokasiRel(Q);
+        }
+        R = next(R);
+    }
+}
+
 int countMed(lire L, adrapt Q)
 {
     /** Manuel Benedict (1301194182) */

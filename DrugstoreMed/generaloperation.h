@@ -7,6 +7,7 @@
 void connect(lire L, Listapt P, limed C); /**menghubungkan apotik dengan obat, jangan dilakukan bila redundan*/ //bagja
 void disconnectmed(lire &L, adrapt P, admed C); /**mendiskonek med dari apt*/ //manuel
 void disconnectapt(lire &L, adrapt P, admed C); /**mendiskonek apt dari med*/ //bagja
+void disconnectonerel(lire &L, adrapt P, admed C); /**hanya diskonek 1 relasi*/
 int countMed(lire L); /**hitung ada berapa obat yang dimiliki apotik*/ //manuel
 int countApt(lire L); /**hitung ada berapa apotik yang punya obat*/ //bagja
 void listMedfApt(lire L, admed A); /**obat tersedia di apotik apa aja ? */ //manuel
