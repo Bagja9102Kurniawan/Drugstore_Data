@@ -4,7 +4,7 @@
 #include "drugstore.h"
 #include "relation.h"
 
-void connect(lire L, adrapt P, admed C); /**menghubungkan apotik dengan obat, jangan dilakukan bila redundan*/ //bagja
+void connect(lire L, Listapt P, limed C); /**menghubungkan apotik dengan obat, jangan dilakukan bila redundan*/ //bagja
 void disconnectmed(lire &L, adrapt P, admed C); /**mendiskonek med dari apt*/ //manuel
 void disconnectapt(lire &L, adrapt P, admed C); /**mendiskonek apt dari med*/ //bagja
 int countMed(lire L); /**hitung ada berapa obat yang dimiliki apotik*/ //manuel
