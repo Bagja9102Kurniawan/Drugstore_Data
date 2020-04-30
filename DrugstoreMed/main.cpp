@@ -121,6 +121,7 @@ int main()
             cout << " APOTIK TUTUP " << endl ;
             cout << "Masukkan apotik yang ingin ditutup: " ;
             cin >> namtik ;
+            ///BELUM KELAR
             /**
             adpt = findElmApt(lapt,namtik) ;
             adrapt P = first(lapt) ;
