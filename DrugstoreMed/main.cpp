@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 #include "drugstore.h"
 #include "medicine.h"
 #include "relation.h"
@@ -30,7 +31,7 @@ int main()
     createListMed(limd);
     createListRel(lir);
 
-    while(pil != 99)
+    while(pil <= 15 && pil>=1)
     {
         menu();
         cin >> pil;
@@ -41,17 +42,22 @@ int main()
             cout << " TAMBAH APOTIK " << endl ;
             cout << "Masukkan ID apotik : ";
             cin >> aptx.IDapotik;
-            cout << "jalan gaesss" <<endl;
+            adpt = findElmIDApt(lapt, aptx.IDapotik);
+            while(adpt != NIL){
+                cout<<"id sudah terdaftar"<<endl<< "Masukkan ID apotik : ";
+                cin >> aptx.IDapotik;
+            }
+
             cout << "nama apotik : ";
             cin >> aptx.namaApotik;
-            cout << "jalan gaesss" <<endl;
+
             cout << "nomor izin : ";
             cin >> aptx.noIzin;
-            cout << "jalan gaesss" <<endl;
+
             adpt = alokasiApt(aptx) ;
-            cout << "jalan gaesss" <<endl;
+
             insertLastApt(lapt,adpt) ;
-            cout << "jalan gaesss" <<endl;
+
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
@@ -60,17 +66,21 @@ int main()
             cout << " TAMBAH OBAT " << endl ;
             cout << "Masukkan ID obat : ";
             cin >> medx.IDobat;
-            cout << "jalan gaesss" <<endl;
+            admd = findElmIDMed(limd, medx.IDobat);
+            while(adpt != NIL){
+                cout<<"id sudah terdaftar"<<endl<< "Masukkan ID obat : ";
+                cin >> medx.IDobat;
+            }
             cout << "nama obat : ";
             cin >> medx.namaObat;
-            cout << "jalan gaesss" <<endl;
+
             cout << "harga obat : ";
             cin >> medx.hargaObat;
-            cout << "jalan gaesss" <<endl;
+
             admd = alokasiMed(medx) ;
-            cout << "jalan gaesss" <<endl;
+
             insertLastMed(limd,admd) ;
-            cout << "jalan gaesss" <<endl;
+
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
@@ -90,7 +100,7 @@ int main()
                 cout<<" Mohon maaf apotik tidak ditemukan, ingin ulang ? Y/N"<<endl;
                 cin>> Yes;
                 if(Yes == "Y" || Yes == "y"){
-                    cin>>namtik;
+                    cout<< "Masukkan nama Apotik : "; cin>>namtik;
                     adpt = findElmApt(lapt, namtik);
                 }else if(Yes == "N" || Yes == "n"){
                     break;
@@ -102,7 +112,7 @@ int main()
                 cout<<" Mohon maaf obat tidak ditemukan, ingin ulang ? Y/N"<<endl;
                 cin>> Yes;
                 if(Yes == "Y" || Yes == "y"){
-                    cin>>nambat;
+                    cout<< "Masukkan nama Obat : "; cin>>nambat;
                     admd = findElmMed(limd, nambat);
                 }else if(Yes == "N" || Yes == "n"){
                     break;
@@ -119,70 +129,129 @@ int main()
         case 5 :
             cout << " ===================== " << endl ;
             cout << " APOTIK TUTUP " << endl ;
-            cout << "Masukkan apotik yang ingin ditutup: " ;
-            cin >> namtik ;
-            ///BELUM KELAR
-            /**
-            adpt = findElmApt(lapt,namtik) ;
-            adrapt P = first(lapt) ;
-            while (P != adpt)
-            {
-                P = next(P) ;
+            cout<< "Masukkan nama Apotik : "; cin>>namtik;
+            adpt = findElmApt(lapt, namtik);
+            while(adpt == NIL){
+                cout<<" Mohon maaf apotik tidak ditemukan, ingin ulang ? Y/N"<<endl;
+                cin>> Yes;
+                if(Yes == "Y" || Yes == "y"){
+                    cout<< "Masukkan nama Apotik : "; cin>>namtik;
+                    adpt = findElmApt(lapt, namtik);
+                }else if(Yes == "N" || Yes == "n"){
+                    break;
+                }
             }
-            disconnectapt(lir,adpt) ;
-            deleteAfterApt(lapt,P,adpt) ;
-            dealokasiApt(adpt) ;
-            **/
+            if(adpt != NIL){
+                adrapt beforeadpt = first(lapt);
+                while(next(beforeadpt)!= adpt){
+                    beforeadpt = next(beforeadpt);
+                }
+                disconnectapt(lir,adpt) ;
+                deleteAfterApt(lapt,beforeadpt,adpt) ;
+                dealokasiApt(adpt);
+            }else{
+                cout<<"Batalkan proses.............";
+            }
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
         case 6 :
             cout << " ===================== " << endl ;
             cout << " OBAT YANG PENJUALANNYA DILARANG " << endl ;
-            cout << "Masukkan obat yang penjualannya dilarang: " ;
-            cin >> nambat ;
-            admd = findElmMed(limd,nambat) ;
-            disconnectmed(lir,admd) ;
-            deleteAfterMed(prev(admd),admd) ;
-            dealokasiMed(admd) ;
+            cout<< "Masukkan nama Obat : "; cin>>nambat;
+            admd = findElmMed(limd, nambat);
+            while(admd == NIL){
+                cout<<" Mohon maaf obat tidak ditemukan, ingin ulang ? Y/N"<<endl;
+                cin>> Yes;
+                if(Yes == "Y" || Yes == "y"){
+                    cout<< "Masukkan nama Obat : "; cin>>nambat;
+                    admd = findElmMed(limd, nambat);
+                }else if(Yes == "N" || Yes == "n"){
+                    break;
+                }
+            }
+            if(admd != NIL){
+                admed beforeadmd = first(limd);
+                while(next(beforeadmd)!= admd){
+                    beforeadmd = next(beforeadmd);
+                }
+                disconnectmed(lir,admd) ;
+                deleteAfterMed(beforeadmd,admd) ;
+                dealokasiMed(admd);
+            }else{
+                cout<<"Batalkan proses.............";
+            }
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
         case 7 :
             cout << " ===================== " << endl ;
             cout << " MENCARI NOMOR IZIN APOTIK BERDASARKAN NAMA " << endl ;
-            cout << "Masukkan nama apotik: " ;
-            cin >> namtik ;
-            cout << endl ;
-            adpt = findElmApt(lapt,namtik) ;
-            cout << "Nomor izin apotik: " << info(adpt).noIzin << endl ;
+            cout<< "Masukkan nama Apotik : "; cin>>namtik;
+            adpt = findElmApt(lapt, namtik);
+            while(adpt == NIL){
+                cout<<" Mohon maaf apotik tidak ditemukan, ingin ulang ? Y/N"<<endl;
+                cin>> Yes;
+                if(Yes == "Y" || Yes == "y"){
+                    cout<< "Masukkan nama Apotik : "; cin>>namtik;
+                    adpt = findElmApt(lapt, namtik);
+                }else if(Yes == "N" || Yes == "n"){
+                    break;
+                }
+            }
+            if(adpt != NIL){
+                cout << "Nomor izin apotik: " << info(adpt).noIzin << endl ;
+            }else{
+                cout<<"Batalkan proses.............";
+            }
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
         case 8 :
             cout << " ===================== " << endl ;
             cout << " MENCARI NOMOR IZIN APOTIK BERDASARKAN ID " << endl ;
-            cout << "Masukkan ID apotik: " ;
-            cin >> ID ;
-            cout << endl ;
-            adpt = findElmIDApt(lapt,ID) ;
-            cout << "Nomor izin apotik: " << info(adpt).noIzin << endl ;
+            cout<< "Masukkan ID Apotik : "; cin>>ID;
+            adpt = findElmIDApt(lapt, ID);
+            while(adpt == NIL){
+                cout<<" Mohon maaf ID apotik tidak ditemukan, ingin ulang ? Y/N"<<endl;
+                cin>> Yes;
+                if(Yes == "Y" || Yes == "y"){
+                    cout<< "Masukkan ID Apotik : "; cin>>ID;
+                    adpt = findElmIDApt(lapt, ID);
+                }else if(Yes == "N" || Yes == "n"){
+                    break;
+                }
+            }
+            if(adpt != NIL){
+                cout << "Nomor izin apotik: " << info(adpt).noIzin << endl ;
+            }else{
+                cout<<"Batalkan proses.............";
+            }
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
         case 9 :
             cout << " ===================== " << endl ;
             cout << " MENCARI OBAT " << endl ;
-            cout << "Masukkan nama obat: " ;
-            cin >> nambat;
-            admd = findElmMed(limd,nambat);
+            cout<< "Masukkan nama Obat : "; cin>>nambat;
+            admd = findElmMed(limd, nambat);
+            while(admd == NIL){
+                cout<<" Mohon maaf obat tidak ditemukan, ingin ulang ? Y/N"<<endl;
+                cin>> Yes;
+                if(Yes == "Y" || Yes == "y"){
+                    cout<< "Masukkan nama Obat : "; cin>>nambat;
+                    admd = findElmMed(limd, nambat);
+                }else if(Yes == "N" || Yes == "n"){
+                    break;
+                }
+            }
             if (admd == NULL)
             {
-                cout << "Obat tidak ditemukan" ;
+                cout << "Mohon maaf obat belum tersedia, terimakasih sduah menggunakan layanan kami" ;
             }
             else
             {
-                cout << "ID Obat: " << info(admd).IDobat << " dengan harga: " << info(admd).hargaObat << endl ;
+                cout << "ID Obat: " << info(admd).IDobat <<endl<< "Harga Obat: " << info(admd).hargaObat << endl ;
             }
             cout << " ===================== " << endl ;
             cout << endl ;
@@ -190,7 +259,6 @@ int main()
             cout << " ===================== " << endl ;
             cout << " MENAMPILKAN APOTIK " << endl ;
             printInfoApt(lapt) ;
-            cout << "jalan gaesss" <<endl;
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
@@ -204,25 +272,93 @@ int main()
         case 12 :
             cout << " ===================== " << endl ;
             cout << " MENAMPILKAN APOTIK YANG MEMILIKI OBAT TERTENTU " << endl ;
-            cout << "Masukkan nama obat : " ;
-            cin >> nambat ;
-            cout << endl ;
-            cout << "Obat ini tersedia di: " ;
-            listMedfApt(lir, findElmMed(limd,nambat)) ;
+            cout<< "Masukkan nama Obat : "; cin>>nambat;
+            admd = findElmMed(limd, nambat);
+            while(admd == NIL){
+                cout<<" Mohon maaf obat tidak ditemukan, ingin ulang ? Y/N"<<endl;
+                cin>> Yes;
+                if(Yes == "Y" || Yes == "y"){
+                    cout<< "Masukkan nama Obat : "; cin>>nambat;
+                    admd = findElmMed(limd, nambat);
+                }else if(Yes == "N" || Yes == "n"){
+                    break;
+                }
+            }
+            if(admd != NIL){
+                cout << "Obat ini tersedia di: " ;
+                listMedfApt(lir, admd) ;
+            }else{
+                cout<<"Batalkan proses.............";
+            }
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
         case 13 :
             cout << " ===================== " << endl ;
             cout << " MENAMPILKAN OBAT YANG DIMILIKI APOTIK TERTENTU " << endl ;
-            cout << "Masukkan nama apotik : " ;
-            cin >> namtik ;
-            cout << endl ;
-            cout << "Apotik ini menyediakan obat: " ;
-            listAptfMed(lir,findElmApt(lapt,namtik)) ;
+            cout<< "Masukkan nama Apotik : "; cin>>namtik;
+            adpt = findElmApt(lapt, namtik);
+            while(adpt == NIL){
+                cout<<" Mohon maaf apotik tidak ditemukan, ingin ulang ? Y/N"<<endl;
+                cin>> Yes;
+                if(Yes == "Y" || Yes == "y"){
+                    cout<< "Masukkan nama Apotik : "; cin>>namtik;
+                    adpt = findElmApt(lapt, namtik);
+                }else if(Yes == "N" || Yes == "n"){
+                    break;
+                }
+            }
+            if(adpt != NIL){
+                cout << "Apotik ini menyediakan obat: " ;
+                listAptfMed(lir, adpt) ;
+            }else{
+                cout<<"Batalkan proses.............";
+            }
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
+        case 14 :
+            cout << " ===================== " << endl ;
+            cout << " jumlah obat yang dimiliki apotik x "<< endl ;
+            cout<< "Masukkan nama Apotik : "; cin>>namtik;
+            adpt = findElmApt(lapt, namtik);
+            while(adpt == NIL){
+                cout<<" Mohon maaf apotik tidak ditemukan, ingin ulang ? Y/N"<<endl;
+                cin>> Yes;
+                if(Yes == "Y" || Yes == "y"){
+                    cout<< "Masukkan nama Apotik : "; cin>>namtik;
+                    adpt = findElmApt(lapt, namtik);
+                }else if(Yes == "N" || Yes == "n"){
+                    break;
+                }
+            }
+            if(adpt != NIL){
+                cout << "Jumlah obat pada apotik "<<namtik<<" saat ini adalah : "<<countMed(lir,adpt);
+            }else{
+                cout<<"Batalkan proses.............";
+            }
+            cout << " ===================== " << endl ;
+        case 15 :
+            cout << " ===================== " << endl ;
+            cout<< "Masukkan nama Obat : "; cin>>nambat;
+            admd = findElmMed(limd, nambat);
+            while(admd == NIL){
+                cout<<" Mohon maaf obat tidak ditemukan, ingin ulang ? Y/N"<<endl;
+                cin>> Yes;
+                if(Yes == "Y" || Yes == "y"){
+                    cout<< "Masukkan nama Obat : "; cin>>nambat;
+                    admd = findElmMed(limd, nambat);
+                }else if(Yes == "N" || Yes == "n"){
+                    break;
+                }
+            }
+            if(admd != NIL){
+                cout << " jumlah apotik yang memiliki obat x " <<countApt(lir,admd)<< endl ;
+            }else{
+                cout<<"Batalkan proses.............";
+            }
+            cout << " ===================== " << endl ;
+            break;
         }
 
     }
@@ -233,7 +369,7 @@ void menu()
 {
     cout << " ===================== SEHAT ASIK JAYA ASRI 4646 SDN. BHD. =====================" << endl ;
     cout << " 1. Tambah apotik " << endl ;                                      ///DONE
-    cout << " 2. Tambah obat " << endl ;                                        /// DONE
+    cout << " 2. Tambah obat " << endl ;                                        ///DONE
     cout << " 3. Menambah obat pada apotik tertentu " << endl ;                 ///HARUSNYA DONE
     cout << " 4. Menghapus obat pada apotik tertentu " << endl ;                ///UDAH (kayaknya)
     cout << " 5. Apotik tutup " << endl ;
@@ -245,6 +381,8 @@ void menu()
     cout << " 11. Menampilkan obat " << endl ;                                  ///DONE
     cout << " 12. Menampilkan apotik yang memiliki obat tertentu " << endl ;    ///UDAH (kayaknya)
     cout << " 13. Menampilkan obat yang dimiliki apotik tertentu " << endl ;    ///UDAH (kayaknya)
+    cout << " 14. Menghitung jumlah obat yang dimiliki apotik " << endl ;       ///DONE
+    cout << " 15. Menghitung jumlah apotik yang memiliki obat " << endl ;       ///DONE
     cout << " Masukkan angka selain menu diatas untuk keluar " << endl ;        ///DONE
     cout << " Pilih menu : " ;
     cout<< endl ;

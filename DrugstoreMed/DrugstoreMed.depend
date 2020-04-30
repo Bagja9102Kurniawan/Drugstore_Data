@@ -1,12 +1,13 @@
 # depslib dependency file v1.0
-1587892086 source:c:\latihan coding\drugstore_data\drugstoremed\drugstore.cpp
+1588233309 source:c:\latihan coding\drugstore_data\drugstoremed\drugstore.cpp
 	"drugstore.h"
 
 1587891235 c:\latihan coding\drugstore_data\drugstoremed\drugstore.h
 	<iostream>
 
-1588175194 source:c:\latihan coding\drugstore_data\drugstoremed\main.cpp
+1588237432 source:c:\latihan coding\drugstore_data\drugstoremed\main.cpp
 	<iostream>
+	<stdlib.h>
 	"drugstore.h"
 	"medicine.h"
 	"relation.h"
@@ -20,7 +21,7 @@
 	"drugstore.h"
 	"medicine.h"
 
-1588155436 c:\latihan coding\drugstore_data\drugstoremed\generaloperation.h
+1588237108 c:\latihan coding\drugstore_data\drugstoremed\generaloperation.h
 	"medicine.h"
 	"drugstore.h"
 	"relation.h"
@@ -66,6 +67,6 @@
 1588177454 source:d:\github\drugstore_data\drugstoremed\relation.cpp
 	"relation.h"
 
-1588176926 source:c:\latihan coding\drugstore_data\drugstoremed\generaloperation.cpp
+1588237108 source:c:\latihan coding\drugstore_data\drugstoremed\generaloperation.cpp
 	"generaloperation.h"
 

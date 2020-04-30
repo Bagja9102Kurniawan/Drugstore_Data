@@ -156,7 +156,7 @@ int countMed(lire L, adrapt Q)
     int i = 0 ;
     while (next(P) != NULL)
     {
-        if (apt(P) != Q)
+        if (apt(P) == Q)
         {
             i++ ;
         }
