@@ -17,13 +17,13 @@
 ### Menu include
 -------------------------------------------------------------------------------
 >**1. Tambah apotik**_(Menerima input user, alokasi, dan insert last Parent)_<br>
->- akan search by id, jika id sama user diminta input ulang<br>
+>- akan search by id, jika id sama user diminta input ulang, diasumsikan input user tidak sama<br>
 -------------------------------------------------------------------------------
 >**2. Tambah obat**_(Menerima input user, alokasi, dan insert last Child)_<br>
->- akan search by id, jika id sama user diminta input ulang<br>
+>- diasumsikan input user tidak sama<br>
 -------------------------------------------------------------------------------
 >**3. Menambah obat pada apotik tertentu**_(Menerima input user, search, connect, insert last Relasi)_<br>
->- akan mengecek jika unputan redundan(sudah pernah dibuat sebelumnya) program akan meminta user memasukkan input baru<br>
+>- akan mengecek jika inputan redundan(sudah pernah dibuat sebelumnya) program akan meminta user memasukkan input baru<br>
 -------------------------------------------------------------------------------
 >**4. Menghapus obat pada apotik tertentu**_(Menerima input user, search, disconnect 1 relasi, delete after before input, dealokasi Relasi)_<br>
 >- hanya menghapus 1 relasi
@@ -43,7 +43,7 @@
 >- search by id parent dan tampilkan no izin apotik yang dicari
 -------------------------------------------------------------------------------
 >**9. Mencari obat**_(Menerima input user, search, menampilkan info obat)_<br>
->- search by name child dan tampilkan infi child yang dicari
+>- search by name child dan tampilkan info child yang dicari
 -------------------------------------------------------------------------------
 >**10. Menampilkan apotik**_(Menampilkan info.namaApotik tiap elemen dalam list Parent)_<br>
 -------------------------------------------------------------------------------
