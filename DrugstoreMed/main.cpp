@@ -9,6 +9,12 @@ using namespace std;
 
 int main()
 {
+    /**Bagja 9102 Kurniawan (1301194020)
+       Manuel Benedict (1301194182) */
+    char i ;
+    cout << "Press anything and enter to exit." ;
+    cin >> i ;
+    system("CLS") ;
     void menu();
     int pil = 1;
 
@@ -31,10 +37,10 @@ int main()
     createListMed(limd);
     createListRel(lir);
 
+    menu() ;
+    cin >> pil;
     while(pil <= 17 && pil>=1)
     {
-        menu();
-        cin >> pil;
         switch (pil)
         {
         case 1 :
@@ -63,8 +69,22 @@ int main()
             cout << " TAMBAH OBAT " << endl ;
             cout << "Masukkan ID obat : ";
             cin >> medx.IDobat;
+            /**
+            admd = findElmIDMed(limd,medx.IDobat);
+            while(admd != NIL){
+                cout<<"id sudah terdaftar"<<endl<< "Masukkan ID obat : ";
+                cin >> medx.IDobat;
+            }
+            **/
             cout << "Masukkan nama obat : ";
             cin >> medx.namaObat;
+            /**
+            admd = findElmMed(limd,medx.namaObat);
+            while(admd != NIL){
+                cout<<"id sudah terdaftar"<<endl<< "Masukkan nama obat : ";
+                cin >> medx.namaObat;
+            }
+            */
             cout << "Masukkan harga obat : ";
             cin >> medx.hargaObat;
             admd = alokasiMed(medx) ;
@@ -235,7 +255,7 @@ int main()
             }
             if (admd == NULL)
             {
-                cout << "Mohon maaf obat belum tersedia, terimakasih sduah menggunakan layanan kami" ;
+                cout << "Mohon maaf obat belum tersedia, terimakasih sudah menggunakan layanan kami" ;
             }
             else
             {
@@ -362,32 +382,37 @@ int main()
             cout << " ===================== " << endl ;
             break ;
         }
-
+        cout << "Press anything and enter to exit." ;
+        cin >> i ;
+        system("CLS") ;
+        menu();
     }
     return 0;
 }
 
 void menu()
 {
+    /**Bagja 9102 Kurniawan (1301194020)
+       Manuel Benedict (1301194182) */
     cout << " ===================== SEHAT ASIK JAYA ASRI 4646 SDN. BHD. =====================" << endl ;
-    cout << " 1. Tambah apotik " << endl ;                                      ///DONE
-    cout << " 2. Tambah obat " << endl ;                                        ///DONE
-    cout << " 3. Menambah obat pada apotik tertentu " << endl ;                 ///HARUSNYA DONE
-    cout << " 4. Menghapus obat pada apotik tertentu " << endl ;                ///UDAH (kayaknya)
+    cout << " 1. Tambah apotik " << endl ;
+    cout << " 2. Tambah obat " << endl ;
+    cout << " 3. Menambah obat pada apotik tertentu " << endl ;
+    cout << " 4. Menghapus obat pada apotik tertentu " << endl ;
     cout << " 5. Apotik tutup " << endl ;
-    cout << " 6. Obat yang penjualannya dilarang " << endl ;                    ///UDAH (kayaknya)
-    cout << " 7. Mencari nomor izin apotik berdasarkan nama " << endl ;         ///UDAH (kayaknya)
-    cout << " 8. Mencari nomor izin apotik berdasarkan ID " << endl ;           ///UDAH (kayaknya)
-    cout << " 9. Mencari obat " << endl ;                                       ///UDAH (kayaknya)
-    cout << " 10. Menampilkan apotik " << endl ;                                ///DONE
-    cout << " 11. Menampilkan obat " << endl ;                                  ///DONE
-    cout << " 12. Menampilkan apotik yang memiliki obat tertentu " << endl ;    ///UDAH (kayaknya)
-    cout << " 13. Menampilkan obat yang dimiliki apotik tertentu " << endl ;    ///UDAH (kayaknya)
-    cout << " 14. Menghitung jumlah obat yang dimiliki apotik " << endl ;       ///DONE
-    cout << " 15. Menghitung jumlah apotik yang memiliki obat " << endl ;       ///DONE
+    cout << " 6. Obat yang penjualannya dilarang " << endl ;
+    cout << " 7. Mencari nomor izin apotik berdasarkan nama " << endl ;
+    cout << " 8. Mencari nomor izin apotik berdasarkan ID " << endl ;
+    cout << " 9. Mencari obat " << endl ;
+    cout << " 10. Menampilkan apotik " << endl ;
+    cout << " 11. Menampilkan obat " << endl ;
+    cout << " 12. Menampilkan apotik yang memiliki obat tertentu " << endl ;
+    cout << " 13. Menampilkan obat yang dimiliki apotik tertentu " << endl ;
+    cout << " 14. Menghitung jumlah obat yang dimiliki apotik " << endl ;
+    cout << " 15. Menghitung jumlah apotik yang memiliki obat " << endl ;
     cout << " 16. Jumlah jenis obat " << endl ;
     cout << " 17. Jumlah apotik " << endl ;
-    cout << " Masukkan angka selain menu diatas untuk keluar " << endl ;        ///DONE
+    cout << " Masukkan angka selain menu diatas untuk keluar " << endl ;
     cout << " Pilih menu : " ;
     cout<< endl ;
 }
