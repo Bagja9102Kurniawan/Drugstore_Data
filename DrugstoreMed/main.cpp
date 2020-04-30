@@ -9,6 +9,8 @@ using namespace std;
 
 int main()
 {
+    /**Bagja 9102 Kurniawan (1301194020)
+       Manuel Benedict (1301194182) */
     char i ;
     cout << "Press anything and enter to exit." ;
     cin >> i ;
@@ -390,6 +392,8 @@ int main()
 
 void menu()
 {
+    /**Bagja 9102 Kurniawan (1301194020)
+       Manuel Benedict (1301194182) */
     cout << " ===================== SEHAT ASIK JAYA ASRI 4646 SDN. BHD. =====================" << endl ;
     cout << " 1. Tambah apotik " << endl ;
     cout << " 2. Tambah obat " << endl ;
