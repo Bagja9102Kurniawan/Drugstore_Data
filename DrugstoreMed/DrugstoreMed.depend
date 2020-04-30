@@ -32,39 +32,40 @@
 1587892138 source:c:\latihan coding\drugstore_data\drugstoremed\relation.cpp
 	"relation.h"
 
-1588225960 source:d:\github\drugstore_data\drugstoremed\drugstore.cpp
+1588244601 source:d:\github\drugstore_data\drugstoremed\drugstore.cpp
 	"drugstore.h"
 
-1588225977 d:\github\drugstore_data\drugstoremed\drugstore.h
+1588244601 d:\github\drugstore_data\drugstoremed\drugstore.h
 	<iostream>
 
-1588177454 source:d:\github\drugstore_data\drugstoremed\generaloperation.cpp
+1588244601 source:d:\github\drugstore_data\drugstoremed\generaloperation.cpp
 	"generaloperation.h"
 
-1588178379 d:\github\drugstore_data\drugstoremed\generaloperation.h
+1588244601 d:\github\drugstore_data\drugstoremed\generaloperation.h
 	"medicine.h"
 	"drugstore.h"
 	"relation.h"
 
-1588177454 d:\github\drugstore_data\drugstoremed\medicine.h
+1588244601 d:\github\drugstore_data\drugstoremed\medicine.h
 	<iostream>
 
-1588177454 d:\github\drugstore_data\drugstoremed\relation.h
+1588244601 d:\github\drugstore_data\drugstoremed\relation.h
 	<iostream>
 	"drugstore.h"
 	"medicine.h"
 
-1588226193 source:d:\github\drugstore_data\drugstoremed\main.cpp
+1588255243 source:d:\github\drugstore_data\drugstoremed\main.cpp
 	<iostream>
+	<stdlib.h>
 	"drugstore.h"
 	"medicine.h"
 	"relation.h"
 	"generaloperation.h"
 
-1588177454 source:d:\github\drugstore_data\drugstoremed\medicine.cpp
+1588255635 source:d:\github\drugstore_data\drugstoremed\medicine.cpp
 	"medicine.h"
 
-1588177454 source:d:\github\drugstore_data\drugstoremed\relation.cpp
+1588244601 source:d:\github\drugstore_data\drugstoremed\relation.cpp
 	"relation.h"
 
 1588237108 source:c:\latihan coding\drugstore_data\drugstoremed\generaloperation.cpp
