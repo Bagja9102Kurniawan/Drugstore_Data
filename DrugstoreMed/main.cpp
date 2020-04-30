@@ -14,6 +14,7 @@ int main()
     string nambat;
     string namtik;
     string Yes;
+    int ID ;
 
     apotik aptx;
     adrapt adpt;
@@ -118,24 +119,54 @@ int main()
         case 5 :
             cout << " ===================== " << endl ;
             cout << " APOTIK TUTUP " << endl ;
+            cout << "Masukkan apotik yang ingin ditutup: " ;
+            cin >> namtik ;
+            ///BELUM KELAR
+            /**
+            adpt = findElmApt(lapt,namtik) ;
+            adrapt P = first(lapt) ;
+            while (P != adpt)
+            {
+                P = next(P) ;
+            }
+            disconnectapt(lir,adpt) ;
+            deleteAfterApt(lapt,P,adpt) ;
+            dealokasiApt(adpt) ;
+            **/
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
         case 6 :
             cout << " ===================== " << endl ;
             cout << " OBAT YANG PENJUALANNYA DILARANG " << endl ;
+            cout << "Masukkan obat yang penjualannya dilarang: " ;
+            cin >> nambat ;
+            admd = findElmMed(limd,nambat) ;
+            disconnectmed(lir,admd) ;
+            deleteAfterMed(prev(admd),admd) ;
+            dealokasiMed(admd) ;
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
         case 7 :
             cout << " ===================== " << endl ;
             cout << " MENCARI NOMOR IZIN APOTIK BERDASARKAN NAMA " << endl ;
+            cout << "Masukkan nama apotik: " ;
+            cin >> namtik ;
+            cout << endl ;
+            adpt = findElmApt(lapt,namtik) ;
+            cout << "Nomor izin apotik: " << info(adpt).noIzin << endl ;
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
         case 8 :
             cout << " ===================== " << endl ;
             cout << " MENCARI NOMOR IZIN APOTIK BERDASARKAN ID " << endl ;
+            cout << "Masukkan ID apotik: " ;
+            cin >> ID ;
+            cout << endl ;
+            adpt = findElmIDApt(lapt,ID) ;
+            cout << "Nomor izin apotik: " << info(adpt).noIzin << endl ;
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
@@ -173,12 +204,22 @@ int main()
         case 12 :
             cout << " ===================== " << endl ;
             cout << " MENAMPILKAN APOTIK YANG MEMILIKI OBAT TERTENTU " << endl ;
+            cout << "Masukkan nama obat : " ;
+            cin >> nambat ;
+            cout << endl ;
+            cout << "Obat ini tersedia di: " ;
+            listMedfApt(lir, findElmMed(limd,nambat)) ;
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
         case 13 :
             cout << " ===================== " << endl ;
             cout << " MENAMPILKAN OBAT YANG DIMILIKI APOTIK TERTENTU " << endl ;
+            cout << "Masukkan nama apotik : " ;
+            cin >> namtik ;
+            cout << endl ;
+            cout << "Apotik ini menyediakan obat: " ;
+            listAptfMed(lir,findElmApt(lapt,namtik)) ;
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
@@ -190,21 +231,21 @@ int main()
 
 void menu()
 {
-    cout << " =====================SEHAT ASIK JAYA ASRI 4646=====================" << endl ;
-    cout << " 1. Tambah apotik DONE " << endl ;
-    cout << " 2. Tambah obat DONE " << endl ;
-    cout << " 3. Menambah obat pada apotik tertentu HARUSNYA DONE" << endl ;
-    cout << " 4. Menghapus obat pada apotik tertentu UDAH (kayaknya)" << endl ;
+    cout << " ===================== SEHAT ASIK JAYA ASRI 4646 SDN. BHD. =====================" << endl ;
+    cout << " 1. Tambah apotik " << endl ;                                      ///DONE
+    cout << " 2. Tambah obat " << endl ;                                        /// DONE
+    cout << " 3. Menambah obat pada apotik tertentu " << endl ;                 ///HARUSNYA DONE
+    cout << " 4. Menghapus obat pada apotik tertentu " << endl ;                ///UDAH (kayaknya)
     cout << " 5. Apotik tutup " << endl ;
-    cout << " 6. Obat yang penjualannya dilarang " << endl ;
-    cout << " 7. Mencari nomor izin apotik berdasarkan nama " << endl ;
-    cout << " 8. Mencari nomor izin apotik berdasarkan ID " << endl ;
-    cout << " 9. Mencari obat " << endl ;
-    cout << " 10. Menampilkan apotik DONE " << endl ;
-    cout << " 11. Menampilkan obat DONE " << endl ;
-    cout << " 12. Menampilkan apotik yang memiliki obat tertentu " << endl ;
-    cout << " 13. Menampilkan obat yang dimiliki apotik tertentu " << endl ;
-    cout << " 99. Exit " << endl ;
+    cout << " 6. Obat yang penjualannya dilarang " << endl ;                    ///UDAH (kayaknya)
+    cout << " 7. Mencari nomor izin apotik berdasarkan nama " << endl ;         ///UDAH (kayaknya)
+    cout << " 8. Mencari nomor izin apotik berdasarkan ID " << endl ;           ///UDAH (kayaknya)
+    cout << " 9. Mencari obat " << endl ;                                       ///UDAH (kayaknya)
+    cout << " 10. Menampilkan apotik " << endl ;                                ///DONE
+    cout << " 11. Menampilkan obat " << endl ;                                  ///DONE
+    cout << " 12. Menampilkan apotik yang memiliki obat tertentu " << endl ;    ///UDAH (kayaknya)
+    cout << " 13. Menampilkan obat yang dimiliki apotik tertentu " << endl ;    ///UDAH (kayaknya)
+    cout << " Masukkan angka selain menu diatas untuk keluar " << endl ;        ///DONE
     cout << " Pilih menu : " ;
     cout<< endl ;
 }

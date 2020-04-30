@@ -126,7 +126,7 @@ adrapt findElmApt(Listapt L, string x){
     return P;
 }
 
-adrapt findElmApt(Listapt L, int x){
+adrapt findElmIDApt(Listapt L, int x){
     /**Bagja 9102 Kurniawan (1301194020)*/
     adrapt P = first(L);
     while(P!=NULL && info(P).IDapotik!= x){
