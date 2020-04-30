@@ -9,7 +9,7 @@
 -------------------------------------------------------------------------------
 # IIIA/A3
 </blockquote>
-  * Apotik/Drugstore as parent ( Single Linked List )
-  * Obat/Medicine as child ( Circular Double Linked List )
-  * Relasi ( Single Linked List )
+</blockquote> Apotik/Drugstore as parent ( Single Linked List )
+</blockquote> Obat/Medicine as child ( Circular Double Linked List )
+</blockquote> Relasi ( Single Linked List )
 </blockquote>
