@@ -121,33 +121,35 @@ void dealokasiMed(admed &P){
 
 admed findElmIDMed(limed L, int x){
     /**Manuel Benedict (1301194182)*/
-    admed P;
-    P = first(L);
+    admed P = first(L);
     do
     {
         P = next(P);
     }
-    while((P != first(L)) && (x != info(P).IDobat));
-    if((P == first(L)) && (x != info(P).IDobat)){
+    while((P != first(L)) && (x != info(P).IDobat)) ;
+    if ((P == first(L)) && (x != info(P).IDobat)) {
         return NIL;
-    }else{
+    }
+    else
+    {
         return P;
     }
 }
 
 admed findElmMed(limed L, string x){
     /**Bagja 9102 Kurniawan*/
-    admed P;
-    P = first(L);
+    admed P = first(L);
     do
     {
         P = next(P);
     }
-    while((P != first(L)) && (x != info(P).namaObat));
-    if((P == first(L)) && (x != info(P).namaObat)){
+    while((P != first(L)) && (x != info(P).namaObat)) ;
+    if ((P == first(L)) && (x != info(P).namaObat)) {
         return NIL;
-    }else{
-        return P;
+    }
+    else
+    {
+        return P ;
     }
 }
 
@@ -177,7 +179,7 @@ int jumlahJenisObat(limed L){
             i++;
         }
     }
-    while (next(P) != NULL);
+    while (next(P) != first(L));
     return i;
 }
 

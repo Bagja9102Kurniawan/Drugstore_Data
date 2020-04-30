@@ -31,9 +31,8 @@ int main()
     createListMed(limd);
     createListRel(lir);
 
-    while(pil <= 15 && pil>=1)
+    while(pil <= 17 && pil>=1)
     {
-        system("CLS");
         menu();
         cin >> pil;
         switch (pil)
@@ -48,7 +47,6 @@ int main()
                 cout<<"id sudah terdaftar"<<endl<< "Masukkan ID apotik : ";
                 cin >> aptx.IDapotik;
             }
-
             cout << "nama apotik : ";
             cin >> aptx.namaApotik;
 
@@ -56,9 +54,7 @@ int main()
             cin >> aptx.noIzin;
 
             adpt = alokasiApt(aptx) ;
-
             insertLastApt(lapt,adpt) ;
-
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
@@ -67,21 +63,12 @@ int main()
             cout << " TAMBAH OBAT " << endl ;
             cout << "Masukkan ID obat : ";
             cin >> medx.IDobat;
-            admd = findElmIDMed(limd, medx.IDobat);
-            while(adpt != NIL){
-                cout<<"id sudah terdaftar"<<endl<< "Masukkan ID obat : ";
-                cin >> medx.IDobat;
-            }
-            cout << "nama obat : ";
+            cout << "Masukkan nama obat : ";
             cin >> medx.namaObat;
-
-            cout << "harga obat : ";
+            cout << "Masukkan harga obat : ";
             cin >> medx.hargaObat;
-
             admd = alokasiMed(medx) ;
-
             insertLastMed(limd,admd) ;
-
             cout << " ===================== " << endl ;
             cout << endl ;
             break ;
@@ -320,6 +307,7 @@ int main()
             break ;
         case 14 :
             cout << " ===================== " << endl ;
+            cout << " MENGHITUNG JENIS OBAT YANG DIMILIKI APOTIK TERTENTU " << endl ;
             cout << " jumlah obat yang dimiliki apotik x "<< endl ;
             cout<< "Masukkan nama Apotik : "; cin>>namtik;
             adpt = findElmApt(lapt, namtik);
@@ -341,6 +329,7 @@ int main()
             cout << " ===================== " << endl ;
         case 15 :
             cout << " ===================== " << endl ;
+            cout << " MENGHITUNG APOTIK YANG MEMILIKI OBAT TERTENTU" << endl ;
             cout<< "Masukkan nama Obat : "; cin>>nambat;
             admd = findElmMed(limd, nambat);
             while(admd == NIL){
@@ -360,6 +349,18 @@ int main()
             }
             cout << " ===================== " << endl ;
             break;
+        case 16 :
+            cout << " ===================== " << endl ;
+            cout << " BANYAK JENIS OBAT " << endl ;
+            cout << "Jenis obat saat ini sebanyak: " << jumlahJenisObat(limd) << " jenis." << endl ;
+            cout << " ===================== " << endl ;
+            break ;
+        case 17 :
+            cout << " ===================== " << endl ;
+            cout << " JUMLAH APOTIK " << endl ;
+            cout << "Banyak apotik saat ini: " << jumlahApotik(lapt) <<  endl ;
+            cout << " ===================== " << endl ;
+            break ;
         }
 
     }
@@ -384,6 +385,8 @@ void menu()
     cout << " 13. Menampilkan obat yang dimiliki apotik tertentu " << endl ;    ///UDAH (kayaknya)
     cout << " 14. Menghitung jumlah obat yang dimiliki apotik " << endl ;       ///DONE
     cout << " 15. Menghitung jumlah apotik yang memiliki obat " << endl ;       ///DONE
+    cout << " 16. Jumlah jenis obat " << endl ;
+    cout << " 17. Jumlah apotik " << endl ;
     cout << " Masukkan angka selain menu diatas untuk keluar " << endl ;        ///DONE
     cout << " Pilih menu : " ;
     cout<< endl ;
