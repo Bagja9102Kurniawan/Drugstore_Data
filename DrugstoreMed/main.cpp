@@ -10,7 +10,7 @@ using namespace std;
 int main()
 {
     void menu();
-    int pil;
+    int pil = 1;
 
     string nambat;
     string namtik;
@@ -33,6 +33,7 @@ int main()
 
     while(pil <= 15 && pil>=1)
     {
+        system("CLS");
         menu();
         cin >> pil;
         switch (pil)
