@@ -127,7 +127,7 @@ admed findElmIDMed(limed L, int x){
         P = next(P);
     }
     while((P != first(L)) && (x != info(P).IDobat)) ;
-    if ((P == first(L)) && (x != info(P).IDobat)) {
+    if (x != info(P).IDobat) {
         return NIL;
     }
     else
@@ -144,7 +144,7 @@ admed findElmMed(limed L, string x){
         P = next(P);
     }
     while((P != first(L)) && (x != info(P).namaObat)) ;
-    if ((P == first(L)) && (x != info(P).namaObat)) {
+    if (x != info(P).namaObat) {
         return NIL;
     }
     else

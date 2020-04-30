@@ -54,7 +54,7 @@
 	"drugstore.h"
 	"medicine.h"
 
-1588255243 source:d:\github\drugstore_data\drugstoremed\main.cpp
+1588261511 source:d:\github\drugstore_data\drugstoremed\main.cpp
 	<iostream>
 	<stdlib.h>
 	"drugstore.h"
@@ -62,7 +62,7 @@
 	"relation.h"
 	"generaloperation.h"
 
-1588255635 source:d:\github\drugstore_data\drugstoremed\medicine.cpp
+1588261801 source:d:\github\drugstore_data\drugstoremed\medicine.cpp
 	"medicine.h"
 
 1588244601 source:d:\github\drugstore_data\drugstoremed\relation.cpp
