@@ -59,7 +59,7 @@
 -------------------------------------------------------------------------------
 >**16. Jumlah jenis obat**_(dengan iterasi menghitung elemen dalam list child)_<br>
 -------------------------------------------------------------------------------
->**17. Jumlah apotik***_(dengan iterasi menghitung elemen dalam list parent)_<br>
+>**17. Jumlah apotik**_(dengan iterasi menghitung elemen dalam list parent)_<br>
 -------------------------------------------------------------------------------
 ## kami mengerjakan sesuai spesifikasi yang diminta dalam google drive dengan tambahan 6 case
 >- redundant
